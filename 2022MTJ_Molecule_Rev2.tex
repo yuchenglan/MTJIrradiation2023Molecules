@@ -1,0 +1,1751 @@
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+%\documentclass[journal,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
+
+\documentclass[molecules,review,submit,pdftex,moreauthors]{Definitions/mdpi} 
+
+
+% usepackage added by authors
+%\usepackage{SIunits}
+\usepackage[amssymb,amsmath]{SIunits}
+\usepackage{overpic}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage[final]{changes}
+%Display Options
+%1. draft: enables markup of changes. default. The list of changes is available via \listofchanges
+%final: suppress the output of changes.  Disables markup of changes, only the correct text will be shown. The list of changes is disabled, too
+%Commands:
+%for added text: \added[id=<id>, comment=<comment>]{<new text>}
+%for deleted text: \deleted[id=<id>, comment=<comment>]{<old text>}
+%for replaced text: \replaced[id=<id>, comment=<comment>]{<new text>}{<old text>}
+
+% For posting an early version of this manuscript as a preprint, you may use "preprints" as the journal and change "submit" to "accept". The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
+
+%--------------------
+% Class Options:
+%--------------------
+%----------
+% journal
+%----------
+% Choose between the following MDPI journals:
+% acoustics, actuators, addictions, admsci, adolescents, aerospace, agriculture, agriengineering, agronomy, ai, algorithms, allergies, alloys, analytica, animals, antibiotics, antibodies, antioxidants, applbiosci, appliedchem, appliedmath, applmech, applmicrobiol, applnano, applsci, aquacj, architecture, arts, asc, asi, astronomy, atmosphere, atoms, audiolres, automation, axioms, bacteria, batteries, bdcc, behavsci, beverages, biochem, bioengineering, biologics, biology, biomass, biomechanics, biomed, biomedicines, biomedinformatics, biomimetics, biomolecules, biophysica, biosensors, biotech, birds, bloods, blsf, brainsci, breath, buildings, businesses, cancers, carbon, cardiogenetics, catalysts, cells, ceramics, challenges, chemengineering, chemistry, chemosensors, chemproc, children, chips, cimb, civileng, cleantechnol, climate, clinpract, clockssleep, cmd, coasts, coatings, colloids, colorants, commodities, compounds, computation, computers, condensedmatter, conservation, constrmater, cosmetics, covid, crops, cryptography, crystals, csmf, ctn, curroncol, currophthalmol, cyber, dairy, data, dentistry, dermato, dermatopathology, designs, diabetology, diagnostics, dietetics, digital, disabilities, diseases, diversity, dna, drones, dynamics, earth, ebj, ecologies, econometrics, economies, education, ejihpe, electricity, electrochem, electronicmat, electronics, encyclopedia, endocrines, energies, eng, engproc, ent, entomology, entropy, environments, environsciproc, epidemiologia, epigenomes, est, fermentation, fibers, fintech, fire, fishes, fluids, foods, forecasting, forensicsci, forests, foundations, fractalfract, fuels, futureinternet, futureparasites, futurepharmacol, futurephys, futuretransp, galaxies, games, gases, gastroent, gastrointestdisord, gels, genealogy, genes, geographies, geohazards, geomatics, geosciences, geotechnics, geriatrics, hazardousmatters, healthcare, hearts, hemato, heritage, highthroughput, histories, horticulturae, humanities, humans, hydrobiology, hydrogen, hydrology, hygiene, idr, ijerph, ijfs, ijgi, ijms, ijns, ijtm, ijtpp, immuno, informatics, information, infrastructures, inorganics, insects, instruments, inventions, iot, j, jal, jcdd, jcm, jcp, jcs, jdb, jeta, jfb, jfmk, jimaging, jintelligence, jlpea, jmmp, jmp, jmse, jne, jnt, jof, joitmc, jor, journalmedia, jox, jpm, jrfm, jsan, jtaer, jzbg, kidney, kidneydial, knowledge, land, languages, laws, life, liquids, literature, livers, logics, logistics, lubricants, lymphatics, machines, macromol, magnetism, magnetochemistry, make, marinedrugs, materials, materproc, mathematics, mca, measurements, medicina, medicines, medsci, membranes, merits, metabolites, metals, meteorology, methane, metrology, micro, microarrays, microbiolres, micromachines, microorganisms, microplastics, minerals, mining, modelling, molbank, molecules, mps, msf, mti, muscles, nanoenergyadv, nanomanufacturing, nanomaterials, ncrna, network, neuroglia, neurolint, neurosci, nitrogen, notspecified, nri, nursrep, nutraceuticals, nutrients, obesities, oceans, ohbm, onco, oncopathology, optics, oral, organics, organoids, osteology, oxygen, parasites, parasitologia, particles, pathogens, pathophysiology, pediatrrep, pharmaceuticals, pharmaceutics, pharmacoepidemiology, pharmacy, philosophies, photochem, photonics, phycology, physchem, physics, physiologia, plants, plasma, pollutants, polymers, polysaccharides, poultry, powders, preprints, proceedings, processes, prosthesis, proteomes, psf, psych, psychiatryint, psychoactives, publications, quantumrep, quaternary, qubs, radiation, reactions, recycling, regeneration, religions, remotesensing, reports, reprodmed, resources, rheumato, risks, robotics, ruminants, safety, sci, scipharm, seeds, sensors, separations, sexes, signals, sinusitis, skins, smartcities, sna, societies, socsci, software, soilsystems, solar, solids, sports, standards, stats, stresses, surfaces, surgeries, suschem, sustainability, symmetry, synbio, systems, taxonomy, technologies, telecom, test, textiles, thalassrep, thermo, tomography, tourismhosp, toxics, toxins, transplantology, transportation, traumacare, traumas, tropicalmed, universe, urbansci, uro, vaccines, vehicles, venereology, vetsci, vibration, viruses, vision, waste, water, wem, wevj, wind, women, world, youth, zoonoticdis 
+
+%---------
+% article
+%---------
+% The default type of manuscript is "article", but can be replaced by: 
+% abstract, addendum, article, book, bookreview, briefreport, casereport, comment, commentary, communication, conferenceproceedings, correction, conferencereport, entry, expressionofconcern, extendedabstract, datadescriptor, editorial, essay, erratum, hypothesis, interestingimage, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, studyprotocol, systematicreview, supfile, technicalnote, viewpoint, guidelines, registeredreport, tutorial
+% supfile = supplementary materials
+
+%----------
+% submit
+%----------
+% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g., the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. If eps figures are used, remove the option pdftex and use LaTeX and dvi2pdf.
+
+%=================================================================
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2022}
+\copyrightyear{2022}
+%\externaleditor{Academic Editor: Firstname Lastname} % For journal Automation, please change Academic Editor to "Communicated by"
+\datereceived{} 
+\dateaccepted{} 
+\datepublished{} 
+%\datecorrected{} % Corrected papers include a "Corrected: XXX" date in the original paper.
+%\dateretracted{} % Corrected papers include a "Retracted: XXX" date in the original paper.
+\hreflink{https://doi.org/} % If needed use \linebreak
+%\doinum{}
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, cleveref, amsthm, hyphenat, natbib, hyperref, footmisc, url, geometry, newfloat, caption
+
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Electromagnetic Irradiation Effects on MgO-based Magnetic Tunnel Junctions: A Review}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Irradiation Effects on MTJs}
+
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0000-0000-000X} % Add \orcidA{} behind the author's name
+%\newcommand{\orcidauthorB}{0000-0000-0000-000X} % Add \orcidB{} behind the author's name
+
+% Authors, for the paper (add full first names)
+\Author{Dereje Seifu $^{1}$, Qing Peng $^{2,3,4, *}$, Kit Sze $^{1}$, Jie Hou $^{5}$, Fei Gao $^{6}$ and Yucheng Lan $^{1, *}$}
+
+%\longauthorlist{yes}
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{Dereje Seifu, Qing Peng, Kit Sze, Jie Hou, Fei Gao and Yucheng Lan}
+
+% MDPI internal command: Authors, for citation in the left column
+\AuthorCitation{Seifu, D.; Peng, Q.; Sze, K.; Jou, J.; Gao, F. and Lan, Y.}
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad Department of Physics and Engineering Physics, Morgan State University, Baltimore, MD 21251, USA\\
+$^{2}$ \quad Physics Department, King Fahd University of Petroleum and Minerals, Dhahran 31261, Saudi Arabia; \\ 
+$^{3}$ \quad K.~A.~CARE Energy Research and Innovation Center at Dhahran, Dhahran, 31261, Saudi Arabia \\
+$^{4}$ \quad Hydrogen and Energy Storage Center, King Fahd University of Petroleum and Minerals, Dhahran 31261, Saudi Arabia \\
+$^{5}$ \quad School of Materials Science and Engineering, Georgia Institute of Technology, Atlanta, GA 30332, USA \\
+$^{6}$ \quad Nuclear Engineering and Radiological Sciences, University of Michigan, Ann Arbor, MI 48109, USA
+}
+
+% Contact information of the corresponding author
+\corres{Correspondence: qing.peng@kfupm.edu.sa (Q.~P.); yucheng.lan@morgan.edu (Y.~L.).}
+
+% Current address and/or shared authorship
+%\firstnote{Current address: Affiliation 3} 
+%\secondnote{These authors contributed equally to this work.}
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+%\simplesumm{} % Simple summary
+
+%\conference{} % An extended version of a conference paper
+
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{
+Magnetic tunnel junctions (MTJs) have been widely utilized in sensitive sensors, magnetic memory, and logic gates due to their tunneling magnetoresistance.  Moreover, these MTJ devices have promising potential for renewable energy generation and storage. Compared with Si-based devices, MTJs are more tolerant to electromagnetic irradiation.  In this review, we summarize the functionalities of MgO-based MTJ devices under different electromagnetic irradiation environments, with a focus on gamma-ray irradiation.  We explore the effects of these irradiation exposures on the MgO tunnel barriers, magnetic layers, and interfaces to understand the origin of their tolerance.  The review enhances our knowledge of the irradiation tolerance of MgO-based MTJs, improves designs of these MgO-based MTJ devices with better tolerances, and provides information to minimize the risks of  irradiation under various irradiation.  This review starts with an introduction to MTJs and irradiation backgrounds, followed by fundamental properties of MTJ materials such as the MgO barrier and magnetic layers.  Then, we review and discuss the MTJ materials and devices' irradiation tolerances under different irradiation environments, including high-energy cosmic radiation, gamma-ray radiation, \added{and lower energy electromagnetic irradiation (}X-ray irradiation, UV-Vis irradiation, \replaced{infrared irradiation, microwave radiation, and radio-frequency electromagnetic irradiation}{low-energy infrared irradiation)}.  In conclusion, we summarize the irradiation effects based on the published literature, which might benefit material design and protection.
+%A single paragraph of about 200 words maximum. For research articles, abstracts should give a pertinent overview of the work. We strongly encourage authors to use the following style of structured abstracts, but without headings: (1) Background: place the question addressed in a broad context and highlight the purpose of the study; (2) Methods: describe briefly the main methods or treatments applied; (3) Results: summarize the article's main findings; (4) Conclusion: indicate the main conclusions or interpretations. The abstract should be an objective representation of the article, it must not contain results which are not presented and substantiated in the main text and should not exaggerate the main conclusions.
+}
+
+% Keywords
+\keyword{Magnetic tunnel junction; irradiation; review
+%keyword 1; keyword 2; keyword 3 (List three to ten pertinent keywords specific to the article; yet reasonably common within the subject discipline.)
+} 
+
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+%\PACS{J0101}
+%\MSC{}
+%\JEL{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Diversity
+%\LSID{\url{http://}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Applied Sciences:
+%\featuredapplication{Authors are encouraged to provide a concise description of the specific application or a potential application of the work. This section is not mandatory.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Data:
+%\dataset{DOI number or link to the deposited data set in cases where the data set is published or set to be published separately. If the data set is submitted and will be published as a supplement to this paper in the journal Data, this field will be filled by the editors of the journal. In this case, please make sure to submit the data set as a supplement when entering your manuscript into our manuscript editorial system.}
+
+%\datasetlicense{license under which the data set is made available (CC0, CC-BY, CC-BY-SA, CC-BY-NC, etc.)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Toxins
+%\keycontribution{The breakthroughs or highlights of the manuscript. Authors can write one or two sentences to describe the most important part of the paper.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Encyclopedia
+%\encyclopediadef{Instead of the abstract}
+%\entrylink{The Link to this entry published on the encyclopedia platform.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\vspace{12pt}
+\section{Introduction}
+
+\subsection{Tunnel Magnetoresistance} 
+
+
+%introduction of MTJ
+The phenomenon of tunnel magnetoresistance (TMR) has gained enormous attention in decades because of its essential applications in non-volatile magnetoresistive random-access memories (RAM) and next-generation magnetic field sensors \cite{Wolf1488,Yuasa2004NM,Djayaprawira2005APL, Newman2015JAP,Bowen2001APL,Heinrich1994Book,Gallagher2006IBM,seifu2018nanowires}.  This interest follows the emergence and success of related magnetoresistance such as anisotropic magnetoresistance (AMR) and giant magnetoresistance (GMR).  Tunneling, as a foundational principle of TMR, arises from the quantum mechanical wave nature of particles and the non-zero probability of particles occupying classical forbidden regions. 
+
+
+The phenomenon of magnetoresistance (MR) was first discovered in 1856 \cite{Thomson1856PRSL} in nickel and iron sheets when subjected to parallel or perpendicular magnetic fields, which is known as anisotropic magnetoresistance (AMR).  The magnitude of electric resistance changed about \unit{2}{\%} at room temperature for alloy AMR materials \cite{Nickel1995TechnicalReport}.  The AMR effect was attributed as a consequence of  a higher probability of $s-d$ scattering of electrons traveling along the direction of magnetic fields \cite{McGuire1975IEEE}.  Since the 1970s, the AMR effect has been utilized for magnetic recording.  
+
+
+Subsequently, a significant resistance variation, up to \unit{50}{\%}, was discovered in a sandwich metallic magnetic Fe / Cr / Fe multi-layers at room temperatures in the late 1980s \cite{Baibich1988PRL,Binasch1989PRB}, known as giant magnetoresistance (GMR).  GMR was characterized as the difference in electrical resistance between parallel magnetic states ($R_{P}$) and anti-parallel magnetic states ($R_{AP}$) normalized by the parallel resistance $R_P$: 
+
+
+\begin{equation}
+    MR = \frac{R_{AP} - R_P}{R_P}
+\end{equation}
+
+
+\noindent The GMR effect has been attributed to the spin-dependent scattering occurring at  interfaces \cite{Camley1989PRL}.  Presently, GMR is being widely utilized in modern hard drives as replacement for AMR devices for reading data.  
+
+
+\replaced{Tunnel magnetoresistance (TMR) can be considered an extension of giant magnetoresistance (GMR) due to their similarities in electrical resistance changes of magnetic multilayer structures by aligning the magnetic moments of adjacent layers.  Different  from GMR, TMR employs a thin insulating layer as a tunneling barrier between magnetic layers, resulting in quantum mechanical electron tunneling across the barrier with a few nanometers in thickness.  This leads to more significant changes in electrical resistance compared to GMR devices.}{
+The tunnel magnetoresistance (TMR) phenomenon is an extension of GMR in which the electrons travel with their spins oriented \replaced{parallelly}{perpendicularly} to the ferromagnetic layers across a thin \emph{non-metallic} tunneling barrier, typically a few nanometers in thickness.  The electrons  tunnel between the two ferromagnetic layers.  TMR is also a quantum mechanical phenomenon that is forbidden in classical physics.  The electric resistances of the layers change with the relative magnetic orientations of the magnetic layers.  
+}
+
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+ % \begin{minipage}[t]{1.0\linewidth}
+  \begin{center}
+   	\includegraphics[width=0.66\linewidth]{FigYuasa2008JPSJ_History}
+  \end{center}
+ \caption{Historical development of MR ratio ratio of MgO-based MTJs at room temperature. The data of Al-O based MTJs were also plotted for comparison.  Reproduced with permission \cite{Yuasa2008JPSJ}.  Copyright 2008, the Physical Society of Japan.}
+  \label{Fig:Yuasa2008JPSJHistory}
+%  \end{minipage}
+\end{figure}
+
+
+\deleted{
+The TMR effect was first observed on Fe/Ge-O/Co multilayers in 1975, exhibiting an MR ratio of \unit{14}{\%} at \unit{4.2}{\kelvin} \cite{Julliere1975PLa}.  The phenomenon is explained in  the spin-polarization of conduction electrons.  In 1994, amorphous aluminum oxide (Al$_2$O$_3$) was introduced as the tunneling barrier, resulting in an observed resistance change of \unit{18}{\%} in a sandwiched Fe / Al$_2$O$_3$ / Fe layers \cite{Miyazaki1995JMMM}. Later, MR ratios of \unit{70}{\%} were achieved in CoFeB / Al$_2$O$_3$ / CoFeB structures \cite{Wang2004IEEE}.  In the 2000s, crystalline MgO was utilized  as the tunneling barrier, resulting in an MR ratio of \unit{500}{\%} at room temperature when Co$_{40}$Fe$_{40}$B$_{20}$ was employed as the ferromagnetic layers \cite{Lee2007APL}.  In addition, an MR up to \unit{1,100}{\%} was also reported at \unit{4.2}{K} in CoFeB / MgO / CoFeB junctions \cite{Ikeda2008APL}.  Figure~\ref{Fig:Yuasa2008JPSJHistory} presents the history of the enhanced MR ratios of MgO-based TMR devices measured at room temperature. 
+}
+
+
+\begin{figure}
+%\begin{wrapfigure}{l}{0.45\textwidth}
+  \begin{center}
+    \includegraphics[width=0.85\linewidth]{FigYuasa2004NM_TEM}
+%    \includegraphics[width=0.66\linewidth]{FigYuasa2004NM_TMR}
+  \end{center}
+  \caption{\textit{(a) TEM and (b) HRTEM images of a Fe(001) / MgO(001) / Fe(001) MTJ.  Reproduced with permission \cite{Yuasa2004NM}.  Copyright 2004, Springer Nature.}}
+  %Thickness of the MgO barrier: \unit{1.8}{\nano\meter}.  
+  \label{Fig:Yuasa2004NM_TMR}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+TMR technology and devices emerged in the 1990s as superior alternative to AMR and GMR devices for data storage due to their outstanding MR characteristics.  Magnetic tunnel junctions (MTJs) are the core component of TMR devices.  The development of MTJs was comprehensively reviewed recently \cite{Zhu2006MT,Chappert2007NM,Yuasa2008JPSJ}.  Interested readers are encouraged to read the literature cited therein. \added{
+Briefly, the tunnelling magnetoresistance (TMR) effect, which is explained by spin-polarized tunneling electrons, was first observed in Fe/Ge-O/Co multilayers in 1975 with an MR ratio of \unit{14}{\%} at \unit{4.2}{K} \cite{Julliere1975PLa}. In 1994, amorphous aluminum oxide (Al$_2$O$_3$) was introduced as a tunneling barrier material, achieving MR ratios of \unit{18}{\%} in Fe / Al$_2$O$_3$ / Fe layers \cite{Miyazaki1995JMMM} and \unit{70}{\%} in CoFeB / Al$_2$O$_3$ / CoFeB structures \cite{Yuasa2002Science,Wang2004IEEE} in the 2000s. AlO$_x$-based MTJs have been reviewed recently and interested readers are referred to literature listed therein \cite{yuasa2016magnetic}.  MgO-based MTJs were first investigated in the 1990s \cite{Moodera1996JAP}.  A moderate TMR of \unit{20}{\%} was achieved at room temperature in amorphous MgO-based MTJs.  Crystalline MgO was later utilized as a tunneling barrier material, resulting in room temperature MR ratios of \unit{30}{\%} \cite{Bowen2001APL}, \unit{67}{\%} \cite{FaureVincent2003APL}, \unit{88}{\%} \cite{Yuasa2004JJAP}, \unit{180}{\%} \cite{Yuasa2004NM}, and \unit{220}{\%}  \cite{Parkin2004NM} in crystalline Fe(001) / MgO(001) / Fe(001) MTJs, \unit{230}{\%}  \cite{Djayaprawira2005APL} and \unit{355}{\%}  \cite{Ikeda2005JJAP} in CoFeB / MgO / CoFeB MTJs, \unit{410}{\%} in Co(001) / MgO(001) / Co(001) MTJs \cite{Yuasa2006APL}, \unit{500}{\%} \cite{Lee2007APL,Zhu2006MT,Yuasa2008JPSJ} and \unit{604}{\%} \cite{Ikeda2008APL} in CoFeB / MgO / CoFeB MTJs.  The highest MR ratio, \unit{1,144}{\%},  was observed at \unit{4.2}{\kelvin} in CoFeB / MgO / CoFeB MTJs \cite{ikeda2008tunnel}. The MR ratios of MgO-based MTJs have increased by over 50 times in less than two decades since the initial report, with some reviews of giant TMR in MgO-based MTJs published \cite{Yuasa2007JPd,Yuasa2008JPSJ}. The history of MR ratios of both AlO$_x$-based and MgO-based MTJs is plotted in Figure~\ref{Fig:Yuasa2008JPSJHistory}. Clarifying the irradiation tolerance of these devices will lead to a deeper understanding of the physics of spin-dependent tunneling states.
+}
+
+
+MTJs consist of two ferromagnetic layers separated by a very thin insulator with a nanometer-scale thickness, typically made of amorphous Al$_3$O$_3$ or crystalline MgO. Figure~\ref{Fig:Yuasa2004NM_TMR} shows a typical MTJ consisted of a MgO crystalline barrier and Fe layers.  Electrons tunnel across the insulating nanolayer from one ferromagnetic layer to the other, thereby contributing to the junction's electric conduction.  The resistance of an MTJ is dependent on the relative magnetic alignment, either parallel or anti-parallel, of its ferromagnetic layers and its thin insulating layer.  
+    
+
+Various ferromagnetic materials, including Fe, Co, FeCo alloys, and FeCoB, have been employed as MTJ ferromagnetic layers. Typically, these layers are crystalline in nature, with a specific orientation, such as Fe(001), chosen to match the crystalline barrier and increase MR ratios.
+
+
+\deleted{
+Aluminum oxide (Al$_2$O$_3$) barriers were first developed for MTJs in the late1990s.  MR ratios of \unit{12}{\%} \cite{Moodera1995PRL} and \unit{18}{\%} \cite{Miyazaki1995JMMM} were achieved at room temperature during that decade.  It was predicted that TMR ratios could be as high as \unit{70}{\%} for AlO$_x$-based MTJs \cite{Yuasa2002Science}.  These predicted ratios were  experimentally realized for CoFeB / Al$_2$O$_3$ / CoFeB MTJs in the 2000s \cite{Wang2004IEEE}. % with a polarization factor $P = 0.61$) 
+Recently, AlO$_x$-based MTJs were reviewed and interested readers are referred to literature listed therein \cite{yuasa2016magnetic}. The history of the MR ratio of AlO$_x$-based MTJs is plotted in Figure~\ref{Fig:Yuasa2008JPSJHistory}.
+}
+
+\deleted{
+Magnesium oxide (MgO) is another important barrier material in MTJs.  The first investigation of MgO-based MTJs was carried out in the 1990s \cite{Moodera1996JAP}.  The MgO-based MTJs consisted of polycrystalline layers and nearly amorphous MgO, yielding a moderate TMR of \unit{20}{\%} at room temperature.  It the beginning of the 2000s,  the first-principles calculations on spin-dependent tunneling conductance predicted MR ratios exceeding \unit{1000}{\%} in Fe / MgO / Fe MTJs \cite{Butler2001PRB,Mathon2001PRB}.  Experimental MR ratios of \unit{30}{\%} \cite{Bowen2001APL}, \unit{67}{\%} \cite{FaureVincent2003APL}, \unit{88}{\%} \cite{Yuasa2004JJAP}, \unit{180}{\%} \cite{Yuasa2004NM}, and \unit{220}{\%}  \cite{Parkin2004NM} were achieved in crystalline Fe(001) / MgO(001) / Fe(001) MTJs within the following one to four years. Very shortly, experimental MR ratios of \unit{230}{\%}  \cite{Djayaprawira2005APL} and \unit{355}{\%}  \cite{Ikeda2005JJAP} were observed in CoFeB / MgO / CoFeB MTJs. An MR of  \unit{410}{\%} was reported in Co(001) / MgO(001) / Co(001) MTJs  \cite{Yuasa2006APL} at room temperature too.  By adjusting the interfaces of MgO barriers and choosing ferromagnetic layers, high MR ratios of \unit{500}{\%} were achieved at room temperature in (Co$_x$Fe$_{100-x}$)$_{80}$B$_{20}$ / MgO / (Co$_x$ Fe$_{100-x}$)$_{80}$B$_{20}$ MTJs \cite{Lee2007APL} and CoFeB / MgO / CoFeB MTJs \cite{Zhu2006MT,Yuasa2008JPSJ}. An MR ratio of \unit{604}{\%} was reported in CoFeB / MgO / CoFeB MTJs \cite{Ikeda2008APL} at room temperature at the end of the 2000s.  The highest MR ratio, \unit{1,144}{\%},  was observed at \unit{5}{\kelvin} \cite{ikeda2008tunnel} at the same year.  The MR ratios of MgO-based MTJs have increased by over 50 time in less than two decades since the initial report. The MgO barriers in these high-MR MTJs were single-crystalline or textured polycrystalline.  Many review of giant TMR in MgO-based MTJs have been published \cite{Yuasa2007JPd,Yuasa2008JPSJ}, and readers are referred to the literature therein.  Figure~\ref{Fig:Yuasa2008JPSJHistory} displays the history of MR ratios of MgO-based MTJs.
+}
+
+
+%\added{
+%The term MTJs and MTJ devices are often interchangeably used in literature.  To distinguish them in this review, MTJs are defined as junctions composed of insulating barriers and ferromagnetic layers, also known as free- / fixed layers or simply layers.  MTJ devices, one the other hand, consist of MTJs and electrodes.  Electrodes are metal layers with thicknesses ranging from microns millimeters.
+%}  
+
+
+\subsection{Applications of MTJs}
+
+
+MTJs have a broad range of applications in electronics, sensing, energy generation, and energy storage owing to their unique tunneling properties.  A brief overview of these applications is presented below.  Since the MR of MgO-based MTJs is significantly higher than that of AlO$_x$-based MTJs, our focus will only be on MgO-based MTJs here.
+
+
+\vspace{12pt}
+\subsubsection{Electronics}
+
+
+One of the most known applications of MTJs is their use in data storage, particularly in MTJ-based memory devices   \cite{Akerman2005Science,Mao2006IEEE,Chappert2007NM,Puebla2020CM}, including dynamic random-access memory, flash memories,  and hard disk drives.  Data can be stored without the need for external magnetic fields \cite{Hosomi2005IEEE}.  Many review articles have been published on this topic, as listed in the preceding section.  MgO-based TMJs exhibit high MR ratios at room temperature and have been utilized  in hard disk drives (HDD) with high-density  \cite{Ho2001IEEE,Mao2002IEEE,Araki2002IEEE,Mao2004IEEE,Mao2006IEEE,Kagami2006IEEE,Chappert2007NM}.
+
+
+Additionally, a MTJ is comprised of two distinct states, namely, parallel and anti-parallel.  Consequently, a single MTJ has the capability to store data in four different states \cite{horiguchi2006multi}.  Therefore, stacked MTJs are suitable for use in magnetic random-access memory (MRAM) applications \cite{Yuasa2007JPd}) \cite{Tehrani1999JAP,Parkin1999JAP,Tehrani1999IEEE,Engel2002IEEE,Katti2003IEEE,Tehrani2003IEEE,Yuasa2004NM,Engel2005IEEE,Chappert2007NM,Zhu2008IEEE,Dave2006IEEE,Gallagher2006IBM}.  %Nanomagnetic technology can be used in information processing, storage, or transmission, for example, in quantum computing or single electron logic device \cite{bader2006rev}.
+These nonvolatile MRAMs demand high MR ratios of \unit{> 150}{\%} at room temperature.   
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+ % \begin{minipage}[t]{1.0\linewidth}
+  \begin{center}
+   	\includegraphics[width=0.66\linewidth]{MRAM_cell.png}
+ \caption{Structure of an MRAM cell (Courtesy of Freescale).}
+ \label{Fig:MRAMCell}
+  \end{center}
+%  \end{minipage}
+\end{figure}
+
+
+Figure~\ref{Fig:MRAMCell} shows a typical structure of an MRAM element.  The element's primary component is an MTJ, which comprises a ferromagnetic free layer, an insulating tunnel barrier, and a ferromagnetic fixed layer.  These sandwiched layers exhibit TMRs as a result of spin-dependent electron tunneling \cite{Gallagher1997JAP,Parkin1999JAP,Tehrani1999JAP,Yuasa2007JPd}.  A recent review of the structure of MRAMs can be found in reference \cite{Zhu2008IEEE}.  
+
+
+MRAM has the potential to replace all existing memory devices because of it capability of combining the speed of static random-access memory (SRAM) speed and the density of dynamic random-access memory (DRAM), while also being non-volatile like  hard disk drives (HDD).  Therefore,  MRAM is a kind of highly desirable form of memory \cite{Yuasa2002Science,Akerman2005Science,Zhu2006MT}.  As a result, MTJ-based MRAM devices have been extensively investigated in the past two decades.
+
+
+Compared with other kinds of random-access memory, MTJ-based MRAMs are a type of non-volatile memories that can work in irradiation environments, such as in outer space applications \cite{Gerardin2010IEEE}.  Irradiation tolerance of these MRAMs is critical to their effectiveness in such harsh environments.  
+
+
+In addition, MTJs have the potential to be employed as magneto-electric spin logic devices, which are capable of converting analog signals to digital ones.  Various designs of analog-to-digital converters (ADCs) have been proposed  \cite{Jiang2015IEEE,Maciel2020IEEE,Wu2021IEEE}, including Sigma-Delta ($\Sigma-\Delta$) ADCs with high bit-resolution \cite{Wu2021IEEE}.  As compared to traditional ADCs, the energy consumption of these MTJ-based ADCs is super low, down to \unit{66}{fJ} for 4-bit MTJ-based ADCs and \unit{37}{fJ} for 3-bit MTJ-based ADCs \cite{Maciel2020IEEE}.  
+
+
+MTJ devices also have significant potential for sensing, such as ultra-sensitive magnetic field sensors \cite{Paz2014JAP, Ferreira2006JAP},  microwave frequency sensors \cite{Fan2009APL}, microwave power sensors \cite{Fan2014IEEE}, thermal sensors \cite{Sengupta2017SR}, and heat sensors \cite{Bauer2012NM}.
+
+
+ %TMR has potential applications in nanomagnetic \cite{bader2006rev}. Several research efforts are exerted to synthesize nanometric TMR, including in the interiors of carbon nanotubes \cite{Newman2015JAP, aryee2017shape, seifu2018nanowires} as well as using glancing angle deposition to form nano-columns \cite{seifu2018nanowires}.  A topological insulator, such as Bi$_2$Te$_3$, was used to replace MgO as a buffer material between the ferromagnetic layers \cite{alottebi2018magnetic} since MgO reduces the MR ratio by oxidizing the internal surface of the layers. The theoretically predicted the MR ratio \cite{Butler2001PRB} was far from being attained by about a factor of four \cite{Yuasa2004NM}.
+%Internal oxidation of ferromagnetic layers also affects TMR effects.
+
+
+
+\vspace{12pt}
+\subsubsection{Energy Harvesting}
+
+
+In addition to their conventional applications in memory and sensors, MTJ devices hold promise for renewable energy generation and storage.  While relatively new in the field, MTJ-based energy devices have attracted considerable research attention.  Although their device efficiencies are lower than these traditional energy devices,  novel heterostructures of MTJs have the great potential to significantly impact the area.  Lots of research groups have explored the fundamentals and future prospects of energy applications involving the spin of electrons.  Various kinds of energy, ranging from heat and light to mechanical vibrations, have been successfully converted to electricity through spin conversion  \cite{Bauer2012NM,Puebla2020CM,Otani2017NP}.
+
+
+
+\noindent \emph{Heat:}
+
+
+Based on EU data, a considerable amount of industrial energy consumption ranging from \unit{20}{\%} to \unit{50}{\%} is lost as waste heat.  In the United States, up to 1,734 trillion Btu of waste heat went unrecovered in 2008 \cite{WasteHeat2008}.  The Seebeck effect, which involves a electromotive force (emf) generation under a temperature gradient, has been widely investigated in the past decades.  Thermoelectric (TE) devices have the capability to harvest heat to electricity based on the Seebeck effect.  Because of unique characteristics, such as no moving parts, quiet operation, low environmental impact, and high reliability, TE devices have attracted widespread interest since its discovery.  In the past decades, semiconductor TE materials, especially ceramic nanocomposite bulks \cite{Dresselhaus2007AM,Poudel2008Science,Lan2008APL,Lan2009NL,Lan2010AFM}, have been developed for the purpose.  Up to now, various TE nanocomposites have been investigated in absence of magnetic fields \cite{Liu2012NE,Ren2017Book-TE,Bao2023JMST,Liu2022ML,Mao2018AP,Li2018JMCa,Li2021JMCa,Ren2022MTP,Jia2021MTP,Basu2021MTP,Liu2017MTP,Shuai2017MTP}.  Device efficiency of up to \unit{10}{\%} can be achieved using the semiconductor TE devices.
+
+
+Spin-caloritronics, the combination of spintronics and thermoelectrics, is an emerging field  \cite{Bauer2012NM,Shan2015PRB}.  Electron spin waves interact with heat in insulating ferromagnets under magnetic fields through the magneto-Seebeck effects, also referred as the spin Seebeck effect or magneto-thermopower effects.   A thermal gradient can lead to the production of magneto thermopower and magneto thermocurrent \cite{Liebing2013APL}.  Therefore, spin caloritronic devices can serve as waste heat recyclers and heat sensors under magnetic fields.   
+
+
+MTJs devices, comprised of insulating barriers and ferromagnetic layers, can utilize spin-caloritronics to generate pure spin currents via magnetization dynamics induced by a temperature gradient.  These MTJ devices have unique potential in  harvesting thermal energy and there are many research focusing on MTJ-based heat recycling in the past decade.  The spin-Seebeck coefficients of various MTJs have been measured under magnetic fields \cite{Liebing2012JAP,Bohnert2017PRB,Liebing2013APL,Shan2015PRB,Walter2011NM,Boehnke2013RSI,Huebner2016PRB}.   For examples, CoFeB / MgO / CoFeB MTJs have been integrated with resistance thermometers to recycle waste heat from spin Seebeck effect \cite{Bauer2012NM}.  A Seebeck coefficient of Al$_2$O$)3$-based MTJs was measured up to \unit{1}{mV/K} \cite{Lin2012NC}.  A large spin-dependent Seebeck coefficient of \unit{100}{\micro\volt\per\kelvin} was observed in CoFeB / MgO / CoFeB MTJs \cite{Liebing2011PRL}.  However, due to their nanoscale thickness, the output power of MTJs is much lower than that of semiconductor TE bulk counterparts (up to kW).  It was reported that a output TE power of a CoFeB/ MgO / CoFeB MTJ device was only \unit{10}{pW} per \unit{12.6}{cm^2} (\unit{\sim 10}{\nano\watt\per\meter\squared}) \cite{Bohnert2018PLa}.  Even compared with that of semiconductor TE film devices (up to several hundred W / m$^2$), the output power is super lower for the state-of-art MTJ devices.  Although the power output of present MTJ devices is unsatisfactorily low for industrial heat recyclers, MTJ devices are one kind of emerging energy-harvesting devices. 
+
+
+
+\noindent \emph{Solar energy:}
+
+
+In addition to their capacity of heat recycling, MTJs can generate electricity through the utilization of solar energy.  Phonon can couple to the electron spin and magnon, which enables the generation of spin currents from solar energy \cite{Puebla2020CM}.  More recently, photoinduced spin currents were observed recently \cite{Otani2017NP}.  Furthermore, the potential of MTJs was explored for spin photovoltaic applications \cite{Ellsworth2016NP}.
+
+
+\noindent \emph{Mechanical energy:}
+
+
+Recently, a new research field, known as spinmechanics or spinmechatronics, has emerged to combine spin currents with mechanical motion \cite{Otani2017NP}. Spin currents can be generated from mechanical energy such as vibrations and sounds. \cite{Weiler2012PRL,Xu2018PRB} 
+
+
+In one word, MTJs have the capacity to convert different kinds of energy into electricity through the amalgamation of electron spin with established energy conversion techniques. These research areas are relatively nascent and are expected to possess great applications in the forthcoming decades.
+
+
+\noindent \emph{Electromagnetic energy:}
+
+
+It was reported that MgO-base MTJs could produce significant DC voltage when exposed to microwave radiations \cite{Gui2015APL}.  A DC voltage was generated under microwave irradiation with frequency of \unit{1}{MHz} to \unit{40}{GHz} and power density of \unit{10 - 10 \times 10^6}{mW / m^2}, with a sensitivity of up to \unit{5,000}{mV / mW}.  Similar phenomena was also observed in AlO$_x$-based MTJs exposed to  microwave with power of \unit{1 - 100}{mW} and \unit{1.5 - 2.5}{GHz} \cite{Fan2009APL}.  
+
+
+\vspace{12pt}
+\subsubsection{Energy Storage}
+
+
+MTJs have potential applications in the field of energy storage as well, particular with respect to batteries and capacitors, which are two kinds of popular devices to store energy.  Recent work of MTJ-based energy storage devices are highlighted below.
+
+
+\noindent \emph{Capacitors:}
+
+
+Magnetic capacitances of MTJs was first investigated in Co / Al$_2$O$_3$ / Co MTJs in the 2000s and their potential application is explored as supercapacitors for energy storage \cite{Kaiju2002JAP}.  The tunneling magnetocapacitance (TMC) of Co$_{40}$Fe$_{40}$B$_{20}$ / MgO / Co$_{40}$Fe$_{40}$B$_2$ MTJs was measured at room temperature about two decades late \cite{Kaiju2015APL,Kaiju2018SR}.  The voltage-induced TMC ratio reached \unit{1000}{\%} due to the emergence of spin capacitance.  An inverse of TMC was observed in Fe / AlO$_x$ / Fe$_3$O$_4$ MTJs \cite{Kaiju2017SR}.  The inverse TMC reached up to \unit{11.4}{\%} at room temperature and could potentially reach \unit{150}{\%}.  It is believed that the spin accumulation in anti-parallel configurations of MTJs leads to a difference in spin-up and spin-down diffusion lengths, creating a charge dipole that acts as an extra serial capacitance and gives rise to the observed TMC effect \cite{Lee2015SR}.  
+
+
+
+In a recent study, it was reported that MgO-based (001)-textured MTJs exhibited a significant TMC of \unit{332}{\%} at room temperature \cite{Sato2022SR}.  Subsequently, an even higher TMC of over \unit{420}{\%} at room temperature was achieved through using epitaxial MTJs with MgAl$_2$O$_4$ (001) barriers possessing a cation-disordered spinel structure \cite{Sato2022SR}. 
+
+
+There findings implicate potentials of MTJs for the development of capacitors and related technologies.
+
+
+\noindent \emph{Batteries:}
+
+
+MTJ devices have also been employed as spin batteries for conversions of the magnetic energy of superparamagnetic nanomagnets into electricity \cite{Hai2009Nature}.  The examined MTJs contained MnAs nanomagnets with a zinc-blende-structure.  These nanomagnets were chargeable under magnetic fields, proving evidence for the existence of spin batteries.  The resulting electromotive force ($emf$) was found to operate on a timescale of approximately $10^2 - 10^3$ seconds.  The $emf$ should result from the conversion of the magnetic energy of the super-paramagnetic nanomagnets into electrical energy during their magnetic quantum tunnelling.
+
+
+MTJ devices have diverse applications, such as data storage, sensors, energy generation and storage, even under irradiation.  Consequently, it is crucial to evaluate their capacity to withstand irradiation.  Here we focus on the irradiation tolerance of MgO-based MTJs.  The information would provide valuable insights into their stability, and benefit error-free operation and protection of MgO-based MTJ devices in  irradiation environment. 
+
+
+\vspace{12pt}
+\subsection{Irradiation}
+
+
+MgO-based MTJs may work in various irradiation environments.  Therefore, it is necessary to review both natural and artificial sources of irradiation prior to reviewing the irradiation tolerance of MoO-based MTJs.
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+    \includegraphics[width=0.595\linewidth]{SolarIrradiation}
+    \includegraphics[width=0.6\linewidth]{FigNASA_Radiation}
+  \end{center}
+  \caption{\textit{Radiation (a) in outer space and (b) on Earth.  Satellites are orbiting in the radiation zone of the Van Allen belts whose cross-sectional shape and intensity are shown in (a).  From nasa.gov.}}
+  \label{Fig:IrradiationSources}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+\subsubsection{Natural Radiation Sources}
+
+
+The Sun is the major natural radiation source in our life \added{\cite{Grieder2001Book,nasa}}.  Nuclear fusion processes within the Sun produces cosmic rays that consist of high-energy atomic nuclei and electromagnetic waves, which spread through the solar system.  These \emph{primary cosmic rays} are composed primarily of \unit{99}{\%} nuclei (protons accounting for \unit{90}{\%} , alpha particles accounting for \unit{9}{\%} , and heavier element nuclei making up \unit{1}{\%}) and approximate \unit{1}{\%} solitary electrons and electromagnetic component (gamma-ray, X-ray, UV-visible light, and IR light).  The energy of the primary cosmic rays is high up to \unit{10^{20}}{eV}.  Owing to the Earth's magnetic field, the energetic particles are deflected and trapped within the Van Allen radiation belts.  The belts extend from an altitude of about \unit{640}{km} to \unit{58,000}{km} above the Earth's surface, as shown in Figure~\ref{Fig:IrradiationSources}a.  The primary cosmic rays in the  the Van Allen belts can expose various spacecraft components, including MTJ devices. 
+
+
+Upon entering the Earth's atmosphere, the primary cosmic rays collide with atoms and molecules present in the atmospheric layers \added{\cite{Baumann2020Book}}.  These collisions produce \emph{secondary cosmic particles} with lower energy and \emph{electromagnetic waves}.  The secondary particles and electromagnetic waves including low-energy neutrons, protons, electrons, alpha particles, $\gamma$-rays, and X-rays.  The energy of the secondary cosmic particles and electromagnetic waves is much lower than those of the primary cosmic rays, but while still considerable.  For instance, the energy of the secondary $\gamma$-rays can be \unit{50}{MeV} on the Earth.  Due to their sufficiently high energy, these secondary cosmic particles and electromagnetic waves can potentially damage MTJ devices, leading to soft errors in MTJ-based electronic integrated circuits. 
+
+
+There are natural radioactive minerals on the Earth, such as compounds containing uranium-238 (U-238) and thorium-232 (Th-232) radionuclides.  These radioactive elements emit high-energy particles or rays in the natural environment.  As such, these minerals are another kind of natural irradiation sources on the Earth.
+
+
+Figure~\ref{Fig:IrradiationSources}b shows the full spectrum of electromagnetic irradiation on the Earth.  Table~\ref{Tab:IrradiationEnergy} lists the wavelength, frequency, and energy of various electromagnetic waves.    
+
+
+\begin{table*}
+\caption{Properties of irradiation types.} 
+\centering
+\begin{tabular}{cccc} \\%p{0.75in}p{0.75in}p{.75in}p{0.75in}} \\
+\toprule 
+Name & Wavelength & Frequency & Energy \\
+\midrule
+cosmic radiation & & & up to \unit{10^{20}}{eV} \\
+$\gamma$-ray	& \unit{< 0.01}{nm}	& \unit{> 30}{EHz} & \unit{> 124}{keV} \\
+X-ray	& 0.01 nm - 10 nm	& 30 EHz - 30 PHz	& 124.8 eV - 124.8 keV \\ 
+UV	& 10 nm - 400 nm	& 750 THz - 30 PHz & 3.12 eV - 124.8 eV \\
+visible	& 400 nm - 700 nm & 430 THz - 750 THz	& 1.872 eV - 3.12 eV \\
+infrared & 700 nm - 1 mm & 300 GHz - 430 THz & 1.248 meV - 1.872 eV \\
+microwave & 1 mm - 0.1 m & 3 GHz - 300 GHz & \unit{1.248}{\micro eV} - 1.248 meV \\
+radio &	\unit{> 1}{m} & \unit{ < 3}{GHz} & \unit{< 1.248}{\micro eV} \\
+\bottomrule
+\end{tabular}
+\label{Tab:IrradiationEnergy} \\
+{\footnotesize KHz: \unit{10^3}{Hz}; MHz: \unit{10^6}{Hz}; GHz: \unit{10^9}{Hz}; THz: \unit{10^{12}}{Hz}; PHz: \unit{10^{15}}{Hz}; EHz: \unit{10^{18}}{Hz}.} \\
+{\footnotesize From Ref.~\cite{Haynes2011Book} and nasa.gov.}    
+\end{table*}
+
+
+Thus, it is necessary to investigate potential radiation effects on microelectronic devices that exposed in outer space or on Earth.  This is particularly important in the case of MTJ devices that are deployed in spacecraft, satellites, and airplanes, which operate in irradiation environment filling with high-energy particles and high-energy electromagnetic waves. 
+
+
+\subsubsection{Artificial Radiation Sources}
+
+
+Besides the natural radiation sources, various artificial sources of radiation exist on the Earth, including nuclear weapons, nuclear power plants, television transmitting towers, microwave ovens, wireless phones.  These artificial irradiation is also omnipresent in our surroundings, as shown in Figure~\ref{Fig:IrradiationSources}b.  For instance, modern microwave ovens used in kitchens can produce microwaves with a frequency of \unit{2,450}{\mega\hertz} \added{\cite{Vollmer2004PE}}.  Cellphone towers can emit electromagnetic radiations with \unit{800}{MHz} and \unit{1900}{MHz} for 3G cellphone communications \added{\cite{GSMWiki,CellularWiki}}, \added{with frequencies of 24 - 47 GHz for high-band 5G phones \cite{5GWiki,CellularWiki}}.  Moreover, even the human bodies can emit infrared radiation \added{\cite{An2021PNAS}}.  Although the energy of these artificial radiations is significantly lower than those of cosmic rays, it is still required to know if these artificial radiations damage MTJ devices or degrade MTJ device performances. Therefore, this review paper comprehensively examines radiation impacts of various electromagnetic waves, including $\gamma$-ray, X-ray, UV-visible light, microwaves, and even infrared radiation.
+
+
+% cobalt-60 ($^{60}$Co)or potassium-40 ($^{40}$K).
+
+\begin{table}
+\caption{Some typical irradiation sources used in research laboratories.} 
+\centering
+\begin{tabular}{cccc} %p{0.75in}p{0.75in}p{1.25in}p{0.25in}} \\
+\toprule 
+ Sources & Type & Energy & Ref.\\
+\midrule
+cyclotron & heavy ions & 10 MeV & \cite{Elghefari2008Report,Zhao2019AS} \\
+EBIT & heavy ions & tens keV & \cite{Pomeroy2007NIMPRSb,Zhao2019AS} \\ 
+Tandem accelerator & particles & 20 - 40 MeV & \cite{Kobayashi2014IEEE,Zhao2019AS} \\
+%Synchrotron radiation sources & ions & in MeV & ? \\
+FIB & gallium ions & 30 keV & \cite{Zhao2019AS}\\
+\midrule
+Nuclear reactor & neutron & 500 MeV & \cite{Cost1988IEEE} \\
+\midrule
+TEM & electrons & 80 - 200 keV & \cite{Liu2018AM} \\
+SEM & electrons & 5 keV - 50 keV & \cite{Zhao2019AS} \\
+\midrule
+ $^{24}$Na source & $\gamma$-ray & \unit{2.76}{MeV}, \unit{1.38}{MeV} & \added{\cite{Beach1953PR,Shkapa1993JNCS}} \\
+ $^{40}$K  source & $\gamma$-ray & \unit{1.46}{MeV}, \unit{1.31}{MeV} & \\
+ $^{60}$Co source & $\gamma$-ray & \unit{1.33}{MeV}, \unit{1.17}{MeV} & \added{\cite{Hughes2012IEEE,Wang2019IEEE}} \\
+ $^{137}$Cs source & $\gamma$-ray & \unit{0.66}{MeV} & \added{\cite{Arshak2005Conference}}\\
+\bottomrule
+\end{tabular}
+
+{\footnotesize TEM: transmission electron microscope; EBIT: electron beam ion trap facility; FIB: focused ion beam.}
+
+\label{Tab:LabIrradiationSource}
+\end{table}
+
+
+To date, various artificial radiation sources have been utilized in laboratories to quantitatively investigate irradiation effects on MgO-based MTJ devices.  Most of the data reviewed here were collected on these radiation source.   Table~\ref{Tab:LabIrradiationSource} lists some typical irradiation sources utilized in the cited literature here. 
+
+
+These artificial radiation sources can produce controllable electromagnetic particles in laboratories.  Particle accelerators and synchrotron radiations, for instance, can generate high-energy particles, including neutrons and electrons, with energy ranging from \unit{0.1}{MeV} to \unit{1.0}{MeV} and high flux.  $\gamma$-ray is usually generated from radioisotopes in laboratories, with energy from several keV to MeV.  Some specialized devices, such as electron microscopes, can produce middle-energy particles with \unit{5 - 200}{keV}.  Commercial X-ray tubes can emit low-energy X-ray with tens of electronvolts.  Various light sources, such as Xenon and halogen bulbs, can generate UV-visible light with energies in the electronvolt ranges.  Additionally, infrared irradiation below \unit{1}{eV} can be generated from electric furnaces in laboratories.  
+
+
+\subsubsection{Radiation Units}
+
+
+\begin{table}
+\caption{Radiation unit and \replaced{Terms}{dose category}.} 
+\centering
+\begin{tabular}{p{1in}p{1.75in}p{2in}} \\
+\toprule
+ Category & Unit & Definition \\
+\midrule
+Activity & becquerel (Bq) * & activity of a quantity of radioactive material in which one nucleus decays per second (1/s) \\
+
+& curie (Ci) & quantity or mass of radium emanation in equilibrium with one gram of radium (element), 1 Ci = \unit{3.7 \times 10^{10}}{Bq} \\
+
+& rutherford (Rd) &  activity of a quantity of radioactive material in which one million nuclei decay per second, 1 Rd = 1,000,000 Bq \\
+
+\midrule
+Exposure & r\"{o}ntgen (R) & quantity of radiation which liberates by ionization one esu (\unit{3.33564 \times 10^{10}}{C}) of electricity per cm$^3$ of air under normal conditions of temperature and pressure, 1 R = \unit{2.58 \times 10^{-4}}{C/kg} \\
+
+\midrule
+Absorption & Gray (Gy) * & dose of one joule of energy absorbed per kilogram of matter, 1 Gy = 1 J/kg = 100 rad = 10000 erg/gram \\
+& radiation absorbed dose (Rad) & dose causing 100 ergs of energy to be absorbed by one gram of matter. 1 Rad = 0.01 Gy = 100 erg/gram \\
+\midrule
+absorption & sievert (Sv) * & equivalent biological effect of the deposit of a joule of radiation energy in a kilogram of human tissue, 1 Sv = 1 J/kg = 100 rem \\
+
+& roentgen equivalent man (rem) & 
+unit of	health effect of ionizing radiation.  1 rem = 0.010 Sv = 100 erg/gram \\
+%Abbreviation & Dose category \\
+
+\midrule
+
+Dose & & quantity of radiation or energy absorbed \\
+% TID & & total ionizing dose
+Dose rate & & dose delivered per unit of time \\
+%{SEE & & single event effect
+Exposure & & amount of ionization produced by radiation. The unit is the roentgen (R). \\
+%DDD & & displacement damage dose
+\bottomrule
+\end{tabular} 
+
+\begin{flushleft}
+$*$: SI unit. %Unit of activity: Bq, Ci, Rd; unit of exposure:  C/kg, R; unit of absorbed dose: Gy, erg per gram, rad; unit of equivalent dose: Sv, rem.  
+\added{From epa.gov and nih.gov} \\
+\end{flushleft}
+
+\label{Tab:RadiationUnit}
+\end{table}
+
+
+The impacts of radiation are generally categorized into three types \added{\cite{nasa,Hands2018SW,Baumann2020Book}}: (1) Total Ionizing Dose (TID), which is quantified in Rad or Gray units.  TID effects can change the threshold voltages of electronic devices due to trapping of charges during irradiation exposure.  TID may cause leakages of electric currents.  (2) Single Event Effects (SEE), which is not cumulative but results from individual interaction.  \added{SEE may cause soft errors and hard errors of devices.} (3) Displacement Damage Dose (DDD), which can generate lattice defects.  \added{ Sufficient displacement may change the device or material performance properties over time.}  TID and SEE are examples of ionizing radiation effects, while DDD is an instance of non-ionizing radiation effects. \added{TID and DDD can lead to lasting damage to electronics over an extended period, showing long-term effects, whereas SEE typically results in immediate short-term effects. However, both short-term and long-term effects can potentially have permanent consequences.}
+
+
+To facilitate comprehension of the impact units, a brief summary is provided here. There are four kinds of ionizing radiation quantities: (1) Activity quantity, with units in becquerel (Bq), curie (Ci), and rutherford (Rd); (2) Exposure quantity,  with units in coulomb per kilogram (C/kg) and r\"{o}ntgen (R); (3) Absorbed dose quantity, with units in gray (Gy), erg per gram, and radiation absorbed dos (Rad);  and (4) Equivalent dose quantity, with units in sievert (Sv), r\"{o}ntgen equivalent man (rem).  The definitions of these radiation quantities are also listed in Table~\ref{Tab:RadiationUnit} for readers without radiation background.
+
+
+\vspace{12pt}
+\subsection{Properties of MTJ Materials}
+
+
+MgO-based MTJs are composited of MgO insulating barriers and ferromagnetic layers.  The ferromagnetic layers consist of free-layers and fixed-layers, typically made of ferromagnetic Fe and CoFeB.  In order to understand the irradiation tolerance of MgO-based MTJs, the physical properties of MgO and Fe / COFeB are first summarized below.  The irradiation tolerance of MgO-based MTJs are related to these properties.
+
+
+\subsubsection{Magnesium Oxide Barrier}
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+  \begin{overpic}[width=0.6\linewidth]{MgO}
+    \put(77,69){--- Mg}
+    \put(77,51){--- O}
+  \end{overpic}
+  \end{center}
+  \caption{\textit{Crystallographic structure of MgO.}}
+  \label{Fig:MgOUnitCell}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+    \includegraphics[width=0.6\linewidth]{FigYeganeh2020PhysicaE_MgO100}
+  \end{center}
+  \caption{\textit{(a) Top view (along <001> direction) and (b) side view (along <100> direction) of a MgO (001) monolayer. }}
+  \label{Fig:MgOStructure}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+Magnesium oxide (MgO) possesses an ionic bonding structure, compositing of Mg$^{2+}$ and O$^{2-}$, with a crystallographic structure of rock salt (NaCl).  Figure~\ref{Fig:MgOUnitCell} shows its crystallographic structure.  Figure~\ref{Fig:MgOStructure} shows its monolayer structure.  Magnesium and oxygen atoms alternately stack in the lattice.    
+
+
+\begin{table} %table* to span two column of text
+\caption{Bulk properties of magnesium oxide (MgO) used as barrier layers in MgO-based MTJs \cite{Haynes2011Book}.}
+\label{Tab:MgOProperty}
+\centering
+\begin{tabular}{p{2in}p{3in}} 
+\toprule
+%    Property & & Ref. \\
+ %   \hline
+    Chemical formula & MgO \\ 
+    Space group & Fm$\bar{3}$m, No. 225 \\
+    Lattice constant & $a$ = \unit{4.212}{\angstrom} \\
+    Cleavage & $<100>$ \\
+    Molar mass & \unit{40.3044}{g/mol} \\
+    Coordination geometry & Octahedral (Mg$^{2+}$) and octahedral (O$^{2-}$) \\
+%    Bond length of Mg-O & ? & ? \\
+%    Bonding energy of Mg-O & ? & ? \\
+    Density & \unit{3.58}{g/cm^3} (\unit{25}{\celsius}) \\
+    solubility in water & \unit{0.0062}{g/L} (\unit{0}{\celsius}),  \unit{0.086}{g/L} (\unit{30}{\celsius}) \\
+%    solubility in ethanol & not soluble & ? \\
+%    pH value of saturated solution & 10.3 & ? \\
+    Melting point & \unit{2,852}{\celsius} (3,125 K) \\
+    Boiling point & \unit{3,600}{\celsius} (3,870 K) \\
+    Thermal conductivity & \unit{45 - 60}{W/m/K} (\unit{25}{\celsius}) \\
+    Thermal expansion & \unit{138 \times 10^{-7}}{\per \celsius} (\unit{25}{\celsius}) \\
+    Heat capacity (C) & \unit{37.2}{J/mol/K} (\unit{24}{\celsius}) \\
+    Std molar entropy ($S^{\degree}_{298}$) & \unit{26.95}{J/mol/K} \\
+    Std enthalpy of formation ($\Delta_f H^{\degree}_{298}$) & \unit{601.6}{kJ/mol} \\
+    Gibbs free energy ($\Delta_f G^{\degree}_{298}$) & \unit{-569.3}{kJ/mol} \\
+    Electrical conductivity & \unit{10^{-14}}{\micro S \per\meter} (\unit{24}{\celsius}) \\
+%    Specific permeability & \\
+    Band gap & 7.8 eV \cite{Taurian1985SSC} \\
+    Refractive index ($n_D$) & 1.7355 ($\lambda = \unit{0.633}{\micro\meter}$) \\ 
+                            & 1.72 ($\lambda = \unit{1}{\micro\meter}$) \\
+    Transparency & \unit{> 92}{\%} ($\lambda = \unit{0.25 - 7}{\micro\meter}$) \\
+ %                          & \unit{\sim 92}{\%} (\unit{0.2 - 2}{\micro\meter}) & ? \\
+    Thermal stability & up to \unit{700}{K} \\
+    Dielectric constant &  9.65 \\
+    Magnetic susceptibility ($\chi$)
+ & \unit{- 10.2 \times 10^{-6}}{cm^3 \per mol}   \\
+\bottomrule
+\end{tabular}
+\end{table}    
+
+
+MgO is an excellent electrical insulator, exhibiting a conductivity of  \unit{10^{-14}}{\micro S \per\meter} at room temperature.  Additionally, it is a soft magnetic material, with a magnetic susceptibility of \unit{- 10.2 \times 10^{-6}}{cm^3 \per mol}.  The compound is also a refractory material, with physical and chemical stability up to \unit{2500}{\celsius}.  Its physical properties are listed in Table~\ref{Tab:MgOProperty}. 
+
+
+\subsubsection{Ferromagnetic Layers}
+
+
+Ferromagnetic materials are utilized as free-/fixed layers in MgO-based MTJs.  Crystalline (001) iron films were initially used as free-/fixed layers in MgO-based MTJs to achieve an MR ratio of \unit{220}{\%} \cite{Parkin2004NM,Suzuki2020AIPA} at the begin of the 2000s.  Subsequently, crystalline Co(001) films were employed as free-/fixed layers of MgO-based MTJs, achieving an MR ratio of \unit{410}{\%} \cite{Yuasa2006APL}.  Currently, CoFeB is extensively used in MgO-based MTJs, and the MR ratio has been enhanced to \unit{500 - 600}{\%} at room temperature \cite{Zhu2006MT,Yuasa2008JPSJ,Ikeda2008APL}.  The structural, thermal, and magnetic properties of these three ferromagnetic materials are listed in Table~\ref{Tab:MagneticMaterialProperty}.
+
+
+\begin{table} %table* to span two column of text
+\caption{Physical properties of free-/fixed layer materials in MgO-based MTJs.}
+\label{Tab:MagneticMaterialProperty}
+\centering
+\begin{tabular}{cccc} %p{1.2in}|p{0.6in}|p{0.6in}|p{0.6in}} 
+\toprule
+    Property & Fe & Co & (Co,Fe)$_{80}$B$_{20}$ \\
+\midrule
+   space group & Im$\bar{3}$m & P6$_3$/mmc & amorphous \cite{Gayen2017JAC}\\
+   density (g/cm$^3$) & 7.87 & 8.90 & 7.29 \\
+   melting point (K) & 1,811 & 1,768 & 663-808* \cite{Koster1978SM} \\
+   boiling point (K) & 3,134 & 3,200 & n/a \\
+   thermal conductivity (W/m/K) & 80.4  & 100 & n/a \\
+   electron configuration & [Ar]3d$^6$4s$^2$ & [Ar]3d$^7$4s$^2$ & n/a \\
+   electric conductivity (S / m at RT) & $1.60 \times 10^7$ & $1.04 \times 10^7$ & $10^6 - 10^8$ \cite{Roy1981JMMM} \\
+   magnetic moment ($\mu_B$) & 2.2 & 1.6 & 2.1-2.5 \cite{Srivastava2018PRA} \\
+   Curie temperature (K) & 1,043 & 1,388 & 631 \\
+  % beta-particle ionization critical energy (MV) & 27 & ? & ? \\
+  % beta-particle radiation length (m) & 0.018 & ? & ? \\
+\bottomrule
+\end{tabular}
+
+from https://www.periodic-table.org and metglas.com. \\
+$^*$: crystallization temperature.
+
+\end{table}    
+
+%Beta-particle ionization critical energy and radiation length (the distance over which the incident electronâs energy is reduced by a factor 1/e (0.37) due to radiation losses) are listed in Table?
+
+
+%\cite{Gayen2017JAC}: amorphous CoFeB
+
+
+\vspace{12pt}
+\subsection{Theoretic Irradiation Tolerance of MTJs}
+
+
+Radiation induced damages on electronic circuits have been known since the 1950s.  In the 1970s, memory and logic perturbations were detected in satellite electronic devices as a result of heavy-ion radiation within the solar wind \cite{Binder1975Satellite}.  Subsequently, soft errors caused by cosmic rays were reported in Si-based DRAM memory chips at the end of the 1990s \cite{Ziegler1998IEEE}.  Serving as a counterpart to Si-based devices, the stability of MTJ devices has also been investigated.  In this subsection, the theoretical work will be discussed, while the experimental research will be covered in the subsequent section.
+
+
+Theoretical investigations of the irradiation effects on MTJs were initially carried out using the Julli\'{e}re model \cite{Julliere1975PLa} and the theory of electron tunneling, both of which established TMR models.  In this subsection, the Julli\'{e}re model will be first discussed, followed by the electron tunneling model 
+
+
+According to a report in 1997 \cite{MacLaren1997PRB}, the Julli\'{e}re model is \added{more suitable for amorphous barriers,} not a precise representation of the magnetoconductance exhibited by free electrons tunneling through a \added{crystalline} barrier.  Instead, in the case of thick barriers, Slonczewski's model may offer a more accurate approximation. \replaced{Ionizing radiation, such as $\gamma$-rays, can displace atoms and create local lattice disorder, leading to the formation of amorphous regions in barrier layers. Therefore, despite this limitation, the Julli\'{e}re model is employed here to illustrate the effect of an amorphous state in barrier layers, which is induced by irradiation.  The model would offer a simplified visual representation of the degradation caused by irradiation.}{However, despite this limitation, we will use the Julli\'{e}re model here to illustrate the creation of an amorphous state in barrier layers induced by irradiation, as it provides a simpler representation.}
+
+
+In non-magnetic materials, the populations of spin-up electrons and spin-down electrons are equal, which are randomly distributed in an equilibrium state.  Conversely, in ferromagnetic materials, electron spins are aligned spontaneously, resulting in unequal numbers of spin-up and spin-down electrons.  The unequal spin-up and spin-down electrons can tunnel into the empty states of the initial spin channel, which affect electrical resistance under magnetic fields, resulting non-zero MR ratios.  The MR ratios of an MTJ can be expressed in terms of the conduction electron spin-polarization $P_i$ of the ferromagnetic layers. \cite{Julliere1975PLa,Soulen1998Science}
+
+
+\begin{equation}
+	\text{TMR Ratio} = \frac{2 P_1 P_2}{1 - P_1 P_2}
+\end{equation}
+
+
+\noindent where 
+
+\begin{equation}
+	P_i = \frac{D_{i, \uparrow} (E_F) - D_{i, \downarrow} (E_F)}{D_{i, \uparrow} (E_F) + D_{i, \downarrow} (E_F)}
+\end{equation}
+
+
+\noindent Here $i = 1, 2$.  $D_{i, \uparrow} (E_F)$ and $D_{i, \downarrow} (E_F)$ are the spin-dependent densities of states of the free-/fixed layers at the Fermi energy ($E_F$) for the majority-spin and minority spin bands.  The spin-polarization of the free-/fixed layers $P_i$ ($i = 1, 2$) is affected by free-/fixed layer materials.  Based on the Julli\'{e}re model, any factors changing the Bloch states (such as  momentum and coherency) within the free-/fixed layer can affect tunneling probabilities and  change the TMR ratios.
+
+
+\begin{figure}
+%  \quad
+%  \begin{minipage}[t]{1.0\linewidth}
+  \begin{center}
+  	\includegraphics[width=0.66\linewidth]{FigYuasa2008JPSJ_Wavefunction}
+ \end{center}
+%  \end{minipage}
+  \caption{\textit{Coupling of wave functions between the Bloch states in ferromagnetic Fe(001) layers and the evanescent states in the MgO(001)  barrier for $k_{\parallel} = 0$ direction.  $\Delta_1: s-p-d$; $\Delta_2: d$; $\Delta_5: p-d$.  Reproduced with permission \cite{Yuasa2008JPSJ}.  Copyright 2008, the Physical Society of Japan.}}
+  \label{Fig:Wavefunction}
+ % \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+The concept of electron tunneling can explain MTJ too, with a particular focus on crystalline barrier MgO-based MTJs \cite{Butler2001PRB,Mathon2001PRB}.  It is generally accepted that the effectiveness of MgO-based MTJs is highly dependent on the crystallinity of the insulting MgO barrier.  
+
+
+Figure~\ref{Fig:Wavefunction} illustrates schematically coherent tunneling transports in MgO(001)-based MTJs.  As illustrated in the schematics, there are three kinds of evanescent states (also known as tunneling states) for ideal coherent tunneling in the band-gap of MgO(001): $\Delta_1$, $\Delta_2$, and $\Delta_5$.  $\Delta_1$ Bloch states are highly spin-polarized in the ferromagnetic layers, and tunneling probability is a function of $\kappa_{\parallel}$ wave vectors.  Theoretical studies suggested that the ferromagnetic $\Delta_1$ states dominate the tunneling process through the MgO(001) barrier \cite{Butler2001PRB,Mathon2001PRB}.  When the symmetries of tunneling wave functions are conserved, ferromagnetic $\Delta_1$ Bloch states can couple with MgO $\Delta_1$ evanescent states, which have the slowest decay and highest tunneling probability \cite{Butler2001PRB} along the [001] direction.  The dominant tunneling channel for the parallel magnetic state is free-layer $\Delta_1 \leftrightarrow$ MgO $\Delta_1 \leftrightarrow$ fixed-layer $\Delta_1$.  In the parallel magnetic states, the majority spin-conductance occurs dominantly at $\kappa_{\parallel} = 0$ because of the coherent tunneling of majority spin $\Delta_1$ states.  In contrast, for the minority spin-conductance in the parallel magnetic state and the conductance in the anti-parallel magnetic state, spikes of tunneling probability would appear at the finite $\kappa_{\parallel}$ points.  Although a finite tunneling current flows in the anti-parallel magnetic state, the tunneling conductance of the parallel magnetic state is much higher than that in the anti-parallel magnetic state, leading to a very high MR ratio.
+
+
+According to the theory of electron tunneling, any modification to the symmetry of MgO barriers and ferromagnetic free-/fixed layers would affect the MR ratio of MgO-based MTJs.  This means that the symmetry of both the propagating states in the magnetic layers and the evanescent state in the MgO barrier is critical in determining tunneling conductance.  The symmetry matching of the Bloch actively controls the tunneling conductance and MR states in both the free-/fixed layers and the evanescent states in the barrier.  Any changes to the symmetry of the MgO barrier and magnetic layers would affect the effective $\Delta_1$ states between the MgO barrier and ferromagnetic layers, thereby changing the MR ratios.  
+
+
+As discussed above, several essential factors, including the crystallinity and crystallographic orientation of both the barrier and ferromagnetic layers, play essential roles in MR ratios.  The presence of disorders, such as surface roughness, interface inter-diffusion, and impurities, as well as defects like grain boundaries, stacking faults, and vacancies, would significantly affect the spin-polarization and tunneling conductance.  
+
+
+Irradiation is a source to create defects in MTJs and potentially affect MR effects.  Various types of ionizing radiations, such as $\alpha$-particles, $\beta$-particles, and high-energy ions, as well as non-ionizing radiations including neutrons, electromagnetic radiation like $\gamma$-ray and X-ray, and thermal radiation, could degrade MR performances if any microstructures of MTJs are modified.    
+
+
+The radiation tolerance of AMR and GMR sensors has been experimentally investigated \cite{Michelena2010IEEE,Stutzke2005JAP,Heidecker2010IEEE}.  It was found that these sensors are generally somewhat radiation to resistant.  The radiation tolerance of MTJ devices have also been experimentally studied.  It was believed that polarization of the conduction currents and MR ratios of MTJs would be reduced if the interfaces between the tunneling oxide barrier and the ferromagnetic layer layers were damaged by radiation, which results in spin scattering defects \cite{Hass2006IEEE}.  Any permanent damage to the oxide barrier, usually caused by high-energy irradiation, would cause leakage paths and reduce the tunneling resistance of MTJs.  Low-energy irradiation would cause cumulative degradation of MTJs.
+
+
+A recent review analyzed the effects of radiation on Al$_2$O$_3$-based MTJs \cite{Lu2015JMR}.  High-energy heavy-ion irradiation usually caused the most displacement damage in this kind of MTJs, leading to deteriorated magnetotransport properties with increasing irradiation dose.  High-energy protons and $\gamma$-ray irradiation have minimal effects on the magnetic properties of AlO-based MTJs, suggesting that AlO-based MTJs maybe a promising candidate for radiation applications.   
+
+
+Compared with oxide barriers in AlO-based MTJs, MgO barriers in MgO-based MTJs are thinner, which are usually \unit{1 - 2}{\nano\meter} thick.  The thinner crystalline layers would be more sensitive to irradiation, as observed in other two-dimensional materials \cite{Zhao2019AS,Sze2022MM}, affecting performances of MgO-based MTJs significantly.  
+
+
+Here, we review the literature on the effects of irradiation on MgO-based MTJs, summarize published experimental data, and evaluate the resulting irradiation effects.  This review will highlight the state-of-art findings of the effects of electromagnetic irradiation on MTJs with MgO barriers.
+
+
+\section{Effects of Cosmic Radiation}
+
+
+Primary cosmic rays and secondary high-energy cosmic rays include high-energy protons, alpha particles, nuclei, electrons, and various electromagnetic waves.  Cosmic rays can be classified into four catalogs: heavy ions, mid-mass subatomic particles (proton and neutron), light-mass subatomic particles (electron), and massless electromagnetic waves. The effects of the first three kinds of cosmic irradiation are briefly reviewed in this section.  The effects of electromagnetic irradiation will be reviewed in the subsequent section.  
+
+
+At sea level, the average annual cosmic ray dose is about \unit{0.27}{mSv} (\unit{27}{mrem}).  The irradiation dose is about \unit{0.10}{\micro Sv / h}.  Cosmic radiation dose increases rapidly with increasing altitude, reaching about \unit{2.0}{\micro Sv / h} at \unit{9}{km} altitude and about \unit{9}{\micro Sv / h} at \unit{18}{km} altitude above the Earth's surface.  Therefore, it is necessary to examine the cosmic irradiation on TMR-based MTJs utilized in daily life, especially in spacecrafts and satellites.
+%https://www.periodic-table.org/what-is-natural-background-radiation-definition/
+It is generally accepted that the high-energy particle radiation, such as high-energy ions, neutron, proton, and electron, can degrade the performance of MgO-based MTJ devices.  
+
+
+\subsection{High-energy Heavy-Ion Irradiation}
+
+
+Insulating oxide barriers can be degraded by heavy-ion radiations.  It was reported that ultra-thin aluminum oxide tunnel barriers were damaged by highly charged ions (such as Xe ions with \unit{19 - 42}{keV})  \cite{Pomeroy2011NIMPRSb,Pomeroy2011NIMPRSb}).  The  conductance of AlO-based MTJs linearly increased with irradiation flux \cite{Pomeroy2007NIMPRSb}.  Furthermore, high-energy light ions (such as carbon and oxygen ions) and heavy ions (such as nickel ions) within \unit{10}{MeV} decreased MR ratios of AlO-based MTJs irreversibly as the ion flux increased \cite{Conraux2003JAP}.  
+
+
+MTJ's MgO dielectric barriers are susceptible to radiation too.  Typically, ionizing radiations usually generate charge trap centers in MgO barriers and the interfaces between MgO barriers and ferromagnetic layers.  The produced charge-trap centers can lead to extra noise of MTJs \cite{Nowak1999APL} and reduce MR ratios of MTJs \cite{Moodera1999ARMS} by perturbing tunneling processes.  
+
+
+%\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%  \begin{center}
+%    \includegraphics[width=0.9\linewidth]{IrradiationDamage}
+%  \end{center}
+%  \caption{\textit{Irradiation damage. (a) High angular annular dark-field image of SrTiO$_3$ crystal lattice with a central amorphous core caused by the irradiation with 21 MeV Ni ions with a fluence of 0.02 ions/nm2. \cite{Weber2015SR} (b) TEM image of small voids in  3.5 MeV Fe irradiated 304L stainless steel \cite{Sun2015SR}.  (c) TEM micrographs of \textit{in situ} 2 keV He$^+$ ion irradiation (at a fluence of 3.2 X 1019 ions/m2) of tungsten nanograins.\cite{ElAtwani2014SR} showing bubbles. }}
+%  \label{Fig:IrradiationDamage}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+%\end{figure}
+
+
+MTJ ferromagnetic materials are also susceptible to irradiation.  It has been well known for decades that ion irradiation can damage crystallographic structures of MTJ ferromagnetic layer materials and change their physical properties \cite{Gordon1964IEEE}.  Generally, ion irradiation would cause displacement damage, which affects the microstructure and properties linked to displacement damage \cite{Lu2015JMR}.  It was reported that high-energy argon ions with \unit{44}{MeV} and krypton ions with \unit{35}{MeV} created amorphous zones \cite{Groult1985RE} or defects \cite{Chukalkin1981PSSa} in BaFe$_{12}$O$_{19}$ magnetic materials, changing their magnetic properties and microstructures.   High-energy helium-ion irradiation can create He nanobubbles at ion-implantation regions \cite{Ofan2011PRB} and induce up to \unit{36}{\%} change in  crystal anisotropy \cite{Huang2013OME} of ferroelectric LiNbO$_3$ materials.  
+
+
+%\begin{table}[h]
+%\begin{sidewaystable}
+\begin{table*} %table* to span two column of text
+\caption{Cosmic Radiation Irradiation of MgO-based MTJs.}  
+\begin{tabular}{p{1.5in}p{2in}p{1in}p{0.25in}} 
+\toprule
+MTJ structures & Irradiation conditions & Results & Ref. \\    
+\midrule
+CoFeB/MgO/CoFeB $^{\dagger}$ & Fe ions, 15 MeV, 400 MeV;  Ar, 250 MeV;  Kr, 322 MeV;  Xe, 454 MeV;  Os, 490 MeV & soft errors were detected & \cite{Kobayashi2017JJAP} \\   
+%    \hline 
+     CoFeB/MgO/CoFeB $^{\$}$ & $^{60}$Co, $\gamma$-ray, 247 - 475 Mrad, \unit{220}{rad \per s}, room temperature & magnetism was destroyed & \cite{Wang2019IEEE} \\    
+\midrule
+    CoFeB/MgO/CoFeB $^{\sharp}$ & neutron, 0.1 eV - 10 MeV, \unit{5 \times 10^{10} particles}{\per \centi\meter^2\per\second}, \unit{2.9 \times 10^{15} particles}{\centi\meter^2} & insensitive & \cite{Ren2012IEEE} \\ 
+%    \hline
+\bottomrule
+\end{tabular}
+\label{Tab:CosmicIrradiationMTJ}
+
+\footnotesize
+\begin{flushleft}
+
+Numbers in parentheses are nominal thicknesses in nm. 
+
+\begin{description}
+	\item[$^{\dagger}$]  Ta(5) / Ru(10) / Ta(5) / Pt(5) / [Co(0.4)Pt(0.4)]$_{\times 6}$ / Co(0.4) / Ru(0.4) / [Co(0.4) / Pt(0.4)]$_{\times 2}$ / Co(0.4) / Ta(0.3) / CoFeB(1) / MgO / CoFeB(1.5) / Ta(5) / Ru(5)
+
+	\item[$^{\$}$] Ru(8) / Ta(3) / Mg(0.75) / CoFeB(0.5) / W(0.2) / CoFeB(1.3) / MgO(0.8) / CoFeB(1.0) / W(0.25) / [Co/Pt]$_3$ / Co(0.6) / Ru(0.8) / Co(0.6) / [Co/Pt]$_6$ / [CuN/Ta] / Si 
+	
+	\item[$^{\sharp}$] Si / Ru(6) / IrMn(11) / CoFeB(6) / MgO(1.4) / CoFeB(5)
+
+\end{description}
+
+\end{flushleft}
+
+\end{table*}
+%\end{sidewaystable}
+
+
+The radiation-induced damages of oxide barrier materials and ferromagnetic layer materials would affect behaviors of MTJ devices. It was reported that CoFeB / MgO / CoFeB MTJs were degraded by high-energy oxygen ion (O$^-$) irradiation during RF sputtering \cite{ono2011JJAP}.  Table~\ref{Tab:CosmicIrradiationMTJ} lists some ion-irradiation effects on MgO-based MTJs.  It is generally accepted that high-energy irradiation usually degrades TMR behaviors of MgO-based MTJs. 
+
+
+It was also reported that MgO-based MTJ devices exhibit irradiation tolerance.  NASA conducted a tested MTJ-based MRAM (MR2A16A from Freescale Semiconductor Inc.) under heavy ion single event \cite{Elghefari2008Report}.  The tested MRAM exposed under \unit{3.0}{GeV} Kr ions, \unit{1.6}{GeV} Ar ions, and \unit{3.2}{GeV} Xe ions.  Test results indicated that the MRAM device was sensitive to Single Event Latchup (SEL), which was attributed to the complementary metal-oxide-semiconductor (CMOS) portion of the device.  However, there was no indication that MTJ elements were damaged from heavy ions. 
+
+
+Radiation tolerance of MTJ devices was also reported by other research groups.  Kobayashi \textit{et al.} exposed CoFeB / MgO / CoFeB MTJs to high-energy Si-ion irradiation with \unit{15}{MeV} \cite{Kobayashi2014IEEE}.  The MTJs (consisted of Mg(\unit{1.3}{nm}) and CoFeB (\unit{1.5}{nm}) were sandwiched between \unit{200}{\micro\mete} additional electrodes.  Only minimal degradation (\unit{\sim 1}{\%}) was observed in electrical resistance.  However, no significant changes were detected in retention states before and after the irradiation.
+
+
+\subsection{High-energy Proton Irradiation}
+
+
+Hughes \textit{et al.} irradiated MgO-based MTJ devices (MRAM) utilizing proton ions with energies up to \unit{220}{MeV} and doses up to \unit{1 \times 10^{12}}{proton \per m^2} \cite{Hughes2012IEEE}.  The MTJ devices were consisted of Ru(7nm) / Cu(20nm) / Ta(5nm) / CoFeB(2.2nm) / MgO(1.2nm) / CoFeB(2.5nm) / Ru(1nm) / CoFe(2.5nm) / PtMn(15nm) / Ta(0.5nm) / Cu(100nm) / Ta(0.5nm) / SiO$_2$(100nm) / Si (substrate). Magnetization, ferromagnetic resonance, and tunnel magnetoresistance were examined before and after proton exposures.  No changes were observed in their  material properties.  No radiation effects were observed.
+
+
+Snoeck \textit{et al.} exposed Au($\sim$ 10nm) / Pd($\sim$ 20nm / Fe(30nm) / MgO(0.6nm) / Fe(10nm) magnetic tunnel junctions under \unit{150}{keV} nitrogen ions (N$^+$) at a flux of \unit{5 \times 10^{15}}{ions/cm^2} and \unit{3 \times 10^{16}}{ions/cm^2} \cite{Snoeck2008JP}.  Bi-linear and bi-quadratic coupling increased gradually with increasing ion dose.  However, no completed description of the irradiation-induced effects was reported. 
+
+
+%It was also reported that proton (3.5 MeV) irradiation can generate dislocations in copper \cite{Kiener2011NM}.
+
+
+\subsection{High-energy Neutron Irradiation}
+
+
+High-energy neutron irradiation usually alters atomic arrangements and damages crystalline structures of many materials.  The irradiation can also create nanoscale amorphous regions within crystal lattices \cite{Martinelli2008SST}.  While metals are relatively immune to ionizing radiation due to their ionic bonds, fast neutrons can still enter metals and cause significant structural damages.  For instance, neutron-irradiation induced defect clusters and cavities in copper \cite{Singh1995JNM}, decreased magnetic remanences of NdFeB permanent magnets \cite{Cost1988IEEE}, and changed the Curie temperature of FeNiCrMoSiB amorphous alloys \cite{Skorvanek2006PSSa}.   
+
+
+High-energy neutron irradiation can also damage the ferromagnetic layers of MgO-based MTJs.   
+%Most metals damage their mechanical properties, causing a decrease in ductility and a significant increase in tensile strength. The ductility decrease is due to the irregularity of the crystal lattice caused by 
+High-energy neutron can travel in the crystalline lattice of free-/fixed layers and displace these atoms from their initial lattice positions through kinetic energy transfer.   This kind of displaced atoms are termed a primary knock-on atom (PKA).  The PKA can continuously displace other lattice atoms that named  secondary knock-on atoms (SKAs).  This series of displacements can generate numerous defects in the crystalline free-/fixed layers, ultimately affecting the performance of TMJs. Table~\ref{Tab:CosmicIrradiationMTJ} lists one case of neutron irradiation, which is generally understood to degrade MTJ devices.
+
+
+\subsection{High-energy Electron Irradiation}
+
+
+\begin{figure}
+  \begin{center}
+    \begin{overpic}[width=0.6\linewidth]{FigNikiforov2016RM_Dose}
+    \end{overpic}
+  \end{center}
+  \caption{\textit{Dose dependence of TL intensity of MgO nanomaterials irradiated by a pulsed electron beam.  Reproduced with permission \cite{Nikiforov2016RM}.  Copyright 2015, Elsevier Ltd.}} % at \unit{110}{\celsius}
+  \label{Fig:Nikiforov2016RM}
+  \vspace{-12pt}
+\end{figure}
+
+
+High-energy electron irradiation affects MTJ component materials.  In one study, amorphous CoFeB thin films (which are used as free-/fixed layers of TMJs) were exposed to electron-beam with an energy of \unit{200}{keV} in a transmission electron microscope \cite{Liu2018AM}.  The electron radiation modified phase and microstructure of the films.  Another study examined thermoluminescent properties of ultrafine MgO particles with size of \unit{250 - 500}{nm} under high-dose electron irradiation \cite{Nikiforov2016RM}.  A pulsed electron beam with \unit{130}{keV} was employed at room temperature, with a pulse duration of \unit{2}{ns} and current density of \unit{60}{A / cm^2}.  The absorbed dose was \unit{1.5}{kGy / pulse}.  Figure~\ref{Fig:Nikiforov2016RM} shows the dose-dependent thermoluminescent (TL) intensity of the electron-irradiated MgO nanomaterials. Clearly, MgO structure should be modified by the electron irradiation.
+ 
+
+Unfortunately, there have been few studies on the irradiation effects of high-energy electron on MgO-based MTJs.  Metal layers are usually deposited over ferromagnetic layers of MTJs, preventing electrons from penetrating into MgO barriers and magnetic layers of MTJs. Therefore, high-energy electron should not affect MTJs due to the screen effects of metal layers. 
+
+
+\section{Effects of $\gamma$-ray Irradiation}
+
+
+%begin wide table
+%\onecolumngrid
+
+%\begin{table}[h]
+%\begin{sidewaystable}
+\begin{table*} %table* to span two column of text
+\caption{$\gamma$-ray Electromagnetic Irradiation of MgO-based MTJs.}  
+\begin{tabular}{p{1.5in}p{1.5in}p{0.01in}p{1.5in}p{0.01in}p{0.25in}} 
+\toprule
+MTJ structures & Irradiation conditions & & Results & & Ref. \\    
+\midrule     
+     MgO crystals & \unit{3.0 \times 10^6}{rad / h} for 20 min, $^{60}$Co, \unit{38}{\celsius}, measured within 2 min after irradiation & & irradiation produced vacancies & & \cite{Sibley1969PSSb} \\   
+    MgO crystals & $\gamma$-ray, 2.1 MeV, up to 10 Mrad, \unit{1.6 \times 10^6}{rad / h}, RT & & thermal conductivity decreased half;  absorption increased five times; fully recovered after annealing at \unit{625}{\celsius} for 1 h & & \cite{Abramishvili1981PSSb} \\     
+%    \hline
+    MgO crystals $^{\top}$ & $\gamma$-ray, \unit{1.25}{M \electronvolt}, \unit{10 \times 10^4}{Gy}, 0.8 Gy/s,  \unit{450}{\kelvin} & & TSL intensity increased linearly with dose & & \cite{Kvatchadze2011JMSEa} \\    
+%    \hline
+MgO crystals $^{\bot}$ & $\gamma$-ray,  \unit{1.25}{M \electronvolt}, \unit{10 \times 10^4}{Gy}, \unit{0.8}{Gy/s}, \unit{450}{K} & & TSL intensity was very weakly dependent on dose & & \cite{Kvatchadze2011JMSEa} \\ 
+MgO powder & $\gamma$-ray ($^{60}$Co), \unit{0.3}{Mrads/h}, \unit{\sim 20}{Mrads}, stored at RT for 1 year before measurement && TL changed after irradiation && \cite{Kiesh1977PM} \\    
+MgO powder & $\gamma$-ray ($^{60}$Co), \unit{8.33}{mGy/s}, \unit{1}{Gy} - \unit{50}{kGy} && TL changed with dose && \cite{Soliman2009REDS} \\    
+    \hline
+       Ag/MgO/Ag $^{\nabla}$ & $\gamma$-ray, 0.662 MeV, up to 32.55 mGy & & capacitance increased with dose & & \cite{Arshak2005Conference} \\    
+   \hline
+CoFeB films & $\gamma$-ray, 1.2 MeV, \unit{2.58 \times 10^5}{C/kg}, \unit{60}{\celsius} && sensitive to $\gamma$irradiation & & \cite{Shkapa1993JNCS} \\
+   \hline
+    MgO/CoFeB $^{\S}$ & $\gamma$-ray, 100 kRad & & no noticeable change in magnetic properties & & \cite{Nguyen2010Conference} \\ 
+%    \hline
+    CoFeB/MgO/CoFeB & $^{60}$Co, $\gamma$-ray, 1 Mrad & & no effect && \cite{Hughes2012IEEE} \\
+%    \hline
+    CoFeB/MgO/CoFeB $^{\P}$ & $^{60}$Co, $\gamma$-ray, 10 Mrad, 9.78 rad/min & & highly tolerant of $\gamma$-radiation & & \cite{Ren2012IEEE} \\    
+%   \hline
+   CoFeB/MgO/CoFeB $^{\ddagger}$ & $^{60}$Co, $\gamma$-ray, below 20 Mrad, \unit{220}{rad \per s}, RT & & coercivity increased with irradiation while saturation magnetization was not affected & & \cite{Wang2019IEEE} \\    
+\bottomrule
+\end{tabular}
+\label{Tab:GammaIrradiationMTJ}
+
+\footnotesize
+\begin{flushleft}
+
+Numbers in parentheses are nominal thicknesses in nm. 
+
+\begin{description}
+	\item[$^{\top}$] MgO crystals with OH$^{-}$ impurity of \unit{(4.7 - 4.9) \times 10^{17}}{\per cm^{3}}.
+
+	\item[$^{\bot}$] MgO crystals without OH$^{-}$ impurity.
+
+	\item[$^{\nabla}$] Ag / MgO thick film / Ag.  Grain size of MgO particles: \unit{0.5 - 1.0}{\micro\meter}.  Ag was electrode. 
+
+	\item[$^{\S}$] Ru(7) / Ta(10) / Co$_{60}$Fe$_{20}$B$_{20}$(3) / Mg(0.3) / MgO(1.1) / Co$_{60}$Fe$_{20}$B$_{20}$(3) / Ru(0.8) / Co$_{70}$Fe$_{30}$(2.5) / PtMn(20) / Ta(5) / CuN(30) / Ta(5)
+
+	\item[$^{\P}$] CoFeB(5) / MgO(1.4) / CoFeB(6) / IrMn(11) / Ru(6)
+
+	\item[$^{\ddagger}$] [Co(0.5) / Pt(0.2)]$_{\times 6}$ / Co(0.6) / Ru(0.8) / Co(0.6) / [Co(0.5) / Pt(0.2)]$_{\times 3}$ / W(0.25) / CoFeB(1.0) / MgO(0.8) / CoFeB(1.3) / W(0.2) / CoFeB(0.5) / MgO(0.75) / Ta(3.0) / Ru(8.0)
+
+\end{description}
+
+RT: room temperature;  TSL: thermally-stimulated luminescence.
+
+\end{flushleft}
+
+\end{table*}
+%\end{sidewaystable}
+
+
+%\twocolumngrid
+%return to two column
+
+
+$\gamma$-rays are one kind of electromagnetic radiation with wavelengths ranging from \unit{3 \times 10^{-13}}{\meter} to \unit{3 \times 10^{-11}}{\meter} (approximately \unit{40}{\kilo\electronvolt} to \unit{4.0}{\mega\electronvolt}), \added{being an ionizing radiation}.  The electromagnetic wave can penetrate materials deeply and interact with matters through three kinds of primary processes: photoelectric effect, Compton scattering, and electron-positron pair production, depending on the energy of the incident $\gamma$-ray.  When the energy of $\gamma$-ray is higher than \unit{1.02}{\mega\electronvolt}, it may spontaneously produce an electron and positron pair.  Compton scattering is the principal mechanism when the energy of $\gamma$-ray is \unit{40}{\kilo\electronvolt} -- \unit{4.0}{\mega\electronvolt}.  The photoelectric effect dominants when the energy of $\gamma$-ray is below \unit{50}{\kilo\electronvolt}, whereby an electron absorbs the incident $\gamma$-ray and is excited to conduction bands.  In all three kinds of processes, $\gamma$-ray collides inelastically with electrons, losing energy and continuously moving with a longer wavelength.  Furthermore, $\gamma$-ray can directly ionize atoms through the photoelectric effect and the Compton effect and indirectly through secondary ionization.  These processes occur when MTJs are exposed to $\gamma$-ray.
+
+
+Depending on $\gamma$-ray's energy and properties of MTJ materials, $\gamma$-ray can induce displacements of atoms within lattice, termed defects.  These defects can remain for a long time at room temperature and can be investigated from the Hall effect and electrical measurements.  This kind of irradiation-reduced defects would affect the performances of MTJs.  %Frenekel defects are produced uniformly  
+In facts, most degraded MTJs were investigated under this kind of irradiation interaction. 
+
+
+In contrast to the above interactions, $\gamma$ may only disturb atoms of MTJ materials \replaced{intermittently}{temporarily} or transiently.  The produced disturbances of atoms may disappear shortly once $\gamma$-ray is removed.  This kind irradiation-induced degradation can be only \textit{in-situ} real-time detectable while under irradiation.  
+
+
+Experimental investigations supported these two kinds of $\gamma$-ray interactions.  Several groups have reported that MgO-based MTJs are highly tolerant of $\gamma$-ray radiation up to a dose of \unit{10}{Mrad} \cite{Persson2011MST,Ren2012IEEE}.  In their work,  MTJs were irradiated and then measured \textit{ex-situ}.  Their results indicated that $\gamma$-ray irradiation did not noticeably change TMR ratio, coercivity, and magnetostatic coupling of low-frequency noise.  As such, MgO-based MTJ devices are expected to operate reliably in $\gamma$-ray radiation environment, especially at doses below a few hundred Rad \cite{Sinclair2002Conference}.  Other scientists hold a view that $\gamma$-ray irradiation should degrade MgO-based MTJ devices because $\gamma$-ray changed microstructures of MTJ materials \cite{Kvatchadze2011JMSEa}.  Additionally, others suggested that $\gamma$-ray radiation may affect peripheral circuits of MgO-based MTJ devices (not MTJs) during the read/write operation, leading to soft-errors \cite{Kang2014JPd}.  
+
+
+Table~\ref{Tab:GammaIrradiationMTJ} lists some results of $\gamma$-ray irradiation.  In the following subsections, these published data will be analyzed in details with respect to the MTJ structures and experimental conditions, including the conditions of $\gamma$-ray irradiation and measurement methods.  First, the physical properties of $\gamma$-irradiated MTJ material, including MgO crystals (used as barriers in MTJs), fixed-layers and free-layers, and MgO / ferromagnetic layer interfaces, will be reviewed first.  Next, the review will focus on physical properties of $\gamma$-irradiated MgO-based MTJs.  Finally, the tolerance ability of MgO-based MTJs will be discussed from $\gamma$-ray penetration in MTJs and MTJ devices to explore potential explanations of MgO-based MTJs' irradiation tolerance.
+
+
+\subsection{MTJ Materials under $\gamma$-irradiation}
+
+
+MgO-based MTJs consist of MgO barriers, ferromagnetic free- / fixed-layers, and metal electrodes.  The performance of MTJs is influenced by microstructures, physical properties, and interfaces of these MTJ materials.  Therefore, the characteristics of these MTJ materials with respect to $\gamma$-ray irradiation are discussed firstly. 
+
+
+\vspace{12pt}
+\subsubsection{MgO Crystals under $\gamma$-irradiation}
+
+
+There is  limited amount of literature available on the effects of $\gamma$-ray damage on MgO barriers with nanometer thickness \cite{Lu2015JMR}.  To ensure adequate information on $\gamma$-ray irradiated MgO materials, the irradiation properties of MgO bulks and thick-films are reviewed here.  It is expected that the irradiation properties of MgO barriers in nanometers will exhibit similar behaviors to these observed in MgO bulks and thick-films.   
+
+
+Irradiation properties of MgO have been investigated since the 1960s to explore the potential of MgO for $\gamma$-ray dosimetry by studying its response to $\gamma$-ray irradiation.  MgO crystals were cleaved from ingots and exposed to  $^{60}$Co sources with a radiation intensity of \unit{3.0 \times 10^6}{R / h} \cite{Sibley1969PSSb}.  Thermoluminescence indicated that $\gamma$-ray irradiation induced defects in MgO crystals.     
+
+
+\begin{figure}
+  \begin{center}
+    \begin{overpic}[width=0.3\linewidth]{FigSoliman2009REDS_TL-gamma_Replot}
+    	\put(0, 85){(a)}
+    \end{overpic}
+    \begin{overpic}[width=0.55\linewidth]{FigSoliman2009REDS_TL-Dose-gamma}
+    	\put(-2, 75){(b)}
+    \end{overpic}
+  \end{center}
+  \caption{\textit{(a) TL intensity of MgO powders irradiated by gamma-ray.  Replotted from \cite{Soliman2009REDS}.   (b) TL response of MgO powders with gamma dose.  Reproduced with permission \cite{Soliman2009REDS}.  Copyright 2009, Taylor \&{} Francis Group.}}
+  \label{Fig:Soliman2009REDS}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+MgO powders were also irradiated by $\gamma$-ray lately.  Kiesh \textit{et al.} exposed commercial MgO powders to $^{60}$Co $\gamma$-ray irradiation with a total dose of \unit{20}{Mrads} \cite{Kiesh1977PM}.  The irradiated powders were then kept at room temperature for over a year before measurements. The results showed that $\gamma$-irradiation caused a shift of thermoluminescence peaks.  In another study, MgO powders with a purity of \unit{99.9}{\%} were exposed to $\gamma$-irradiation using a $^{60}$Co source with a dose rate of 8.33 mGy/s \cite{Soliman2009REDS}. Figure~\ref{Fig:Soliman2009REDS}a shows thermoluminescence (TL) of the $\gamma$-ray irradiated MgO powders.  Low-dose $\gamma$-irradiation induced a peak around \unit{280}{\celsius}, while a high $\gamma$-irradiation dose (above 300 Gy) resulting in a peak at \unit{150}{\celsius} which became dominant after exposure to dose above \unit{1}{kGy}.  It was believed that the irradiation dose affected the recombination centers and caused the shift of TL peaks.  Figure~\ref{Fig:Soliman2009REDS}b shows the relationship between $\gamma$-dose and TL response integrated across the entire TL curve over the dose range.  The TL response changed linearly with irradiation dose at intermediate dose levels of \unit{1 - 100}{Gy}, while sub-linearly at higher dose levels of  \unit{0.5 - 50}{kGy}. 
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+%    \begin{tikzpicture}
+%        \node[anchor = south west, inner sep = 0] at (0.1, 0.1) {\includegraphics[width=0.6\linewidth]{FigArshak2005Conference_MgO}};
+%        \draw[line width = 0.02 mm] (1.5, 9) -- (11, 9);
+%        \draw[line width = 0.02 mm] (10, 1) -- (10, 10); 
+%    \end{tikzpicture}
+    \begin{overpic}[width=0.66\linewidth]{FigArshak2005Conference_MgO}
+    	\put(10, 74.6){\line(1, 0){88.3}}
+    	\put(98.2, 8){\line(0, 1){66.7}}
+    \end{overpic}
+  \end{center}
+  \caption{\textit{Real-time capacitance versus $\gamma$-ray radiation dose for Ag / MgO / Ag capacitors.  Reproduced with permission \cite{Arshak2005Conference}.  Copyright 2005, Springer.}}
+  \label{Fig:Arshak2005Conference}
+  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+Arshak \textit{et al.} investigated MgO capacitors consisted of Ag electrodes and sandwiched MgO thick films \cite{Arshak2005Conference,Arshak2006IEEE}.  The grain size of the MgO particles was \unit{0.5 - 1.0}{\micro\meter}.  These MgO capacitors were exposed to $\gamma$-ray irradiation with a maximum dose of \unit{32.55}{mGy} and an energy of  \unit{0.662}{MeV}.  Figure~\ref{Fig:Arshak2005Conference} shows a real-time capacitance of the MgO capacitors as a function of $\gamma$-ray radiation dose.  The capacitance increased continuously with $\gamma$-ray dose, being reversible and less susceptible to $\gamma$-ray radiation.  $\gamma$-rays should damaged the MgO particles and produced structural defects (such as color centers or oxygen vacancies) in MgO, changing the density of charge carriers of the MgO films.  
+
+ 
+Steinike \textit{et al.} exposed mechanically cleavage MgO samples to $\gamma$-ray emitted from $^{60}$Co sources \cite{Steinike1981KT}.  The irradiation was carried out at a rate of \unit{3.4 - 4.5}{MRad \per h} and energy \unit{1.25}{M eV} at \unit{- 196}{\celsius}.  $\gamma$-ray irradiation generated F$^+$-centers and V$^-$ centers in the MgO crystals.  The concentrations of F$^+$ and V$^-$ centers increased linearly with irradiation doses up to \unit{1 - 3}{MRad}, followed by saturation at higher doses.  Additionally, the concentration of the F$^+$ defect centers decreased with increasing annealing temperature and the F$^+$ enters could be removed by annealing at \unit{600}{\celsius}.
+
+
+Clement \textit{et al.} \textit{in-situ} studied absorption and luminescence spectra of MgO crystals under $\gamma$-ray irradiation \cite{Clement1984PRB}.  MgO crystals with \unit{99.99}{\%} purity were exposed to $\gamma$-ray at a flux of \unit{3.5 \times 10^4}{rad \per \hour} for \unit{7}{h} at \unit{20}{\celsius} and \unit{120}{\celsius}, in a vacuum of less than \unit{2 \times 10^{-6}}{Torr}.  The real-time absorption increased with increasing irradiation dose at both temperatures.  It was also reported that subsequent annealing at \unit{600}{\celsius} cancelled the irradiation effect.  Based on the results, it was concluded that impurities of Fe (less than 300 ppm) and Cr (less than 100 ppm) played a significant role in the degradation caused by irradiation.
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=3.5in]{FigAbramishvili1981PSSb_ThermalConductivity} 
+    	    \put(15,94){(a)}
+	        \put(15, 90){Irradiation dose of}
+    		\put(15,85){$\circ$: 0.00 Mrad}
+    		\put(15,80){$\Box$: 0.25 Mrad}
+    		\put(15,75){$\times$: 1.50 Mrad}
+    		\put(15,70){$\bullet$: 10.0 Mrad}
+            %after annealing    	
+    		\put(37,35){Annealed 10-Mrad}
+    		\put(37,30){-irradiated crystals at}    	
+    		\put(37,25){$\bigtriangleup$: \unit{325}{\celsius} for 1h}
+    		\put(37,20){$\blacksquare$: \unit{515}{\celsius} for 1h}
+    		\put(37,15){$+$: \unit{625}{\celsius} for 1h}
+	\end{overpic} \\
+    	\begin{overpic}[width=3.5in]{FigAbramishvili1981PSSb_Obsorption}
+    		\put(35,87){(b)}
+    		\put(35,80){1: without irradiation}
+    		\put(35,75){2: 0.25 Mrad irradiation}
+    		\put(35,70){3: 1.50 Mrad irradiation}
+    		\put(35,65){4: 10.0 Mrad irradiation}
+	\end{overpic}
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{(a) Thermal conductivity and (b) Spectra of optical absorption of MgO crystals before and after $\gamma$-irradiation.  Reproduced with permission \cite{Abramishvili1981PSSb}.  Copyright 1981, John Wiley and Sons.}}
+  \label{Fig:Abramishvili1981PSSb}
+\end{figure}
+
+
+Abramishvili \textit{et al.} studied $\gamma$-ray irradiated MgO crystals too \cite{Abramishvili1981PSSb}.  The total impurity content in the crystals did not exceed \unit{245}{ppm}.  The irradiation was carried out at room temperature, with a dose of \unit{1.6 \times 10^6}{rd/h} and a maximum $\gamma$-ray energy of \unit{2.1}{MeV}. \textit{In-situ} measurements were performed at low temperatures.  It was observed that the irradiation significantly changed the thermal conductivity of the MgO crystals, as shown in Figure~\ref{Fig:Abramishvili1981PSSb}a.  The thermal conductivity was partially reversed by annealing the irradiated crystals at \unit{515}{\celsius} for one hour, which led to the recovery of the crystals' heat conductivity to their initial state.  The observed reversal is consistent with other reports \cite{Clement1984PRB}.  Additionally, their optical absorption was changed after irradiation, as shown in Figure~\ref{Fig:Abramishvili1981PSSb}b.  Upon further analysis, it was believed that $\gamma$-ray irradiation caused the formation of Frenkel pair defects, which changed both thermal conductivity and optical absorption.  Frenkel pair defects can be eliminated through annealing, which leads to the restoration of the original thermal conductivity.
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=3in]{FigKvatchadze2011JMSEa_Temp} 
+    		\put(15,74){(a)}
+            \put(40,74){Irradiation dose of}
+            \put(40,70){1: \unit{0}{Gy}}
+            \put(40,65){2: \unit{1 \times 10^2}{Gy}}
+            \put(40,60){3: \unit{5 \times 10^2}{Gy}}
+            \put(40,55){4: \unit{1 \times 10^3}{Gy}}
+            \put(40,50){5: \unit{2 \times 10^3}{Gy}}
+	    \end{overpic} \\
+    	\begin{overpic}[width=3in]{FigKvatchadze2011JMSEa_dose}
+    		\put(15,67){(b)}
+    		\put(15,60){MgO crystals} 
+            \put(25,25){1: without OH$^{-}$ impurity}
+            \put(25,20){2: OH$^{-}$ impurity  of \unit{4.9 \times 10^{17}}{cm^{-3}}}
+            \put(25,15){3: OH$^{-}$ impurity of \unit{4.9 \times 10^{17}}{cm^{-3}}}
+  	\end{overpic}
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{(a) TSL curves of MgO single crystals with OH$^{-}$ impurity of \unit{4.9 \times 10^{17}}{\per cm^{3}}  under $\gamma$-irradiation under different temperatures. (b) TSL intensity dependence of $\gamma$-irradiation dose at \unit{450}{\kelvin}.  Reproduced with permission \cite{Kvatchadze2011JMSEa}.  Copyright 2011, David Publishing Company.}}
+  \label{Fig:Kvatchadze2011JMSEa}
+\end{figure}
+
+
+Kvatchadze \textit{et al.} \textit{ex-situ} measured thermo-stimulated luminescence (TSL) of nominally pure MgO single crystals containing few impurities (Cr$^{3+}$: \unit{12 - 26}{ppm}; Mn$^{2+}$: \unit{35 - 72}{ppm}; V$^{2+}$: \unit{24 - 60}{ppm}; and OH$^{-}$: $0 - 4.9 \times 10^{17}$ cm$^{-3}$) under $\gamma$-ray irradiation (\unit{0.8}{Gy \per \second} and \unit{1.25}{M \electronvolt})
+%Co60 source
+over a temperature range of \unit{300}{\kelvin} to \unit{775}{\kelvin} \cite{Kvatchadze2011JMSEa}.  It was reported that in MgO crystals containing OH$^{-}$ impurities, the TSL intensity steadily increased with increasing $\gamma$-ray radiation dose at \unit{450}{K}, as shown in Figure~\ref{Fig:Kvatchadze2011JMSEa}a.  Additionally, the TSL intensity at \unit{450}{K} increased linearly with the $\gamma$-ray radiation dose (Figure~\ref{Fig:Kvatchadze2011JMSEa}b).  However, in MgO crystals without OH$^{-}$ impurities, the TSL intensity at \unit{450}{\kelvin} is extremely low sensitive to $\gamma$-ray irradiation (Figure~\ref{Fig:Kvatchadze2011JMSEa}b).  It was believed that foreign hydroxyl ions trapped charges in $\gamma$-ray irradiated MgO crystals, inducing accumulation of hole centers to change optical properties.  
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=0.66\linewidth]{FigLynch1975CJP}
+   % 		\put(15,75){\includegraphics[width=0.6\linewidth]{whiteblock}}
+	    \end{overpic} \\
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{Temperature-dependent photoconductance per unit length of MgO polycrystals before, during, and after $\gamma$-ray
+irradiation.  Reproduced with permission \cite{Lynch1975CJP}.  Copyright 1975, Canadian Science Publishing.}}
+  \label{Fig:Lynch1975CJP}
+\end{figure}
+
+
+Lynch \textit{et al.} \textit{in-situ} investigated photoconductivities of MgO polycrystalline bulks under $\gamma$-ray irradiation fields over a temperature range of \unit{300}{K} to \unit{600}{K}  \cite{Lynch1975CJP}.  $\gamma$-rays were emitted from a $^{60}$Co source, with energy of \unit{1.17}{MeV} or \unit{1.33}{MeV}.  It was reported that the photo-conductivity of MgO bulks increased linearly with $\gamma$-ray radiation dose.  The $\gamma$-ray induced conductivity showed a linear dependence on the radiation dose rate up to \unit{4.0 \times 10^5}{rad/h}.  Additionally, the photo-conductance of MgO bulks increased by about three orders of magnitude when exposed to a $\gamma$-ray irradiation with flux of \unit{(2.9 - 3.7) \times 10^5}{rad/h}.
+
+
+The studies described above have demonstrated the sensitivity of MgO materials (single crystals, polycrystalline bulks, mechanically exfoliated layers, and powders) to $\gamma$-ray irradiation.  \textit{In-situ} work indicated that the irradiation-induced defects could be restored to initial states of non-irradiated states, especially after being annealed at high temperatures.
+
+
+The thickness of MgO crystalline films employed as barrier layers in MgO-based MTJ devices are only several nanometers. Such kinds of thin layers are expected to be more sensitive to $\gamma$-ray irradiation than their bulk counterparts to $\gamma$-ray irradiation, as observed in other two-dimensional nanolayers \cite{Zhao2019AS}.  As a result, MgO-based MTJs should be sensitive to $\gamma$-ray if MgO layers are exposed to $\gamma$-ray irradiation.  
+
+
+Different from free-standing MgO films, MgO barrier layers are sandwiched between ferromagnetic free-/fixed layers in MTJs.  The ferromagnetic layers could potentially reduce irradiation dose into MgO barrier layers and provide some levels of protection. Furthermore, defects induced by $\gamma$-ray irradiation may be \replaced{intermittent}{temporal} and disappear shortly after irradiation exposure or thermal annealing.  Therefore, the irradiation effect on MgO barrier layers are more complex than discussed above.  \textit{In-situ} and real-time measurements should be required to examine the effect of $\gamma$-ray irradiation on MgO barrier layers.  
+
+
+\subsubsection{Ferromagnetic Materials of MTJs under $\gamma$-irradiation}
+
+
+Ferromagnetic films are utilized in MTJs to sandwich  MgO barrier layers, with one being the fixed-layer and the other being the free-layers.  These ferromagnetic layers are typically made of Fe(001) films, FeCo films, or CoFeB films.  A typical MTJ consists of Si / SiO$_2$ / Ta(5) / Ru(10) / Ta(5) / Co$_{20}$ Fe$_{60}$B$_{20}$(5) /  MgO(2.1) / Co$_{20}$Fe$_{60}$B$_{20}$(3) / Ta(5) / Ru(5) (where the numbers in parentheses denote the thickness in nanometers) \cite{Wang2016NL}.  Unlike MgO barrier layers with a thickness of 1-2 nanometers, the ferromagnetic layers, such as CoFeB, are thick and the performance of MTJs is closely related to their magnetic properties.
+
+
+Wang \textit{et al.} \cite{Wang2019IEEE} investigated CoFeB / MgO perpendicular-anisotropy magnetic tunnel junction and found that the magnetism was destroyed if the irradiation dose was sufficiently high.
+
+%and other metal layers (such as Ta and Ru) are thicker
+
+Shkapa \textit{et al.} exposed FeCoB metallic ribbons to $\gamma$-ray irradiation and examined their magnetic properties using nuclear magnetic resonance and the M\'{o}ssbauer effect \cite{Shkapa1993JNCS}.  The (Co, Fe)$_{85}$B$_{15}$ metal glasses were irradiated by \unit{1.2}{\mega\electronvolt} $\gamma$-ray at \unit{60}{\celsius}.  It was reported that Co$_{85 - x}$Fe$_x$B$_{15}$ ($x = 12 - 25$) magnetic glasses were sensitive to $\gamma$-irradiation, changing the atomic short-ordering of FeCoB ribbons.  
+
+
+Other ferromagnetic materials, such as Fe, Co, and FeCo alloys, should be similar to CoFeB materials under $\gamma$-ray irradiation.  To ensure the similarity, the displacements per atom cross-section of Fe films with size of $\unit{100}{\nano\meter} \times \unit{3}{\micro\meter} \times \unit{12}{\micro\meter}$ was calculated using the Monte Carlo simulation method \cite{Pinera2014NIMPRb} under  $\gamma$-ray with energy of \unit{1.3}{\mega\electronvolt} and source activity of \unit{1000}{Ci}.  The displacement cross-section is \unit{0.1}{barns}.  The calculation indicated that the atomic displacement rate was about 0.6/s.  Furthermore, $\gamma$-ray induced displacement cross-sections were very low for $\gamma$-ray irradiation with energy \unit{> 1}{MeV}.
+
+
+Besides MgO barrier layers and ferromagnetic layers, non-magnetic metal films in MTJs, like Ta and Ru layers, can protect MgO layers and ferromagnetic films from $\gamma$-ray irradiation.  However, the consequences of $\gamma$-ray irradiation on metal films are not the subject of this review.  Although not discussed here, there is literature available on this topic \cite{Smith1972JNCS}.
+
+
+%The metal films should protect the MgO layers.  As all of us know that, amorphous films are not stable under irradiation. However, amorphous film devices surprising tolerance under irradiations.  For example, one early study on thin-film amorphous memory devices \cite{Smith1972JNCS} consisted of Al/Mo/amorphous Ge$_{17}$Te$_{83}$/Mo/SiO2 film memory device tolerated \unit{1 \times 10^{16}}{neutrons \per \centi\meter^2} ($E > \unit{10}{\killi\electronvolt}) as well as \unit{3 \times 10^7}{R} of gamma radiation without observable changes in electrical properties.  However the irradiation raised the temperature of the amorphous Ge$_{17}$Te$_{83}$ film by \unit{7}{\celsius}.  The authors did not discuss the origin of the raising temperature but most possibly that the metal layers above the amorphous film absorbed all neutrons or gamma-ray to produce heating, blocking the damage to the amorphous film.  Unfortunately, the micro-structural damage of each layer was not reported to shine a light on the tolerance mechanics.
+
+
+\subsubsection{Interfaces of MgO Barrier / Ferromagnetic Layers}
+
+
+The performance of MTJs is influenced by interfaces between MgO barriers and ferromagnetic layers.  Recent investigations have showed that CoFeB can form Co(Fe)-O bonds and bond to MgO epitaxial grains  after annealing \cite{Wang2016NL}.  Conversion electron M\'{o}ssbauer spectroscopy studies indicated that interfaces between MgO(001) and Fe(001) layers were partially oxidized over \unit{60}{\%}, and Fe diffused into MgO barriers from both ferromagnetic interfaces \cite{Mlynczak2013JAP}.  It is suggested that these interfaces may be more sensitive to $\gamma$-ray irradiation, similar to Al$_2$O$_3$-based MTJs, whose physical properties were significantly affected by irradiation \cite{Lu2015JMR}.  
+
+
+Recent \textit{in-situ} experiments discovered that the uniaxial magnetic anisotropy decreased systematically with increasing annealing temperature \cite{Jamal2023PRB}.  Specifically, the MgO / FeCoB / MgO layers becomes isotropic after annealing at \unit{450}{\celsius}.  The asymmetry at the interfaces was explained by the diffusion of boron from the FeCoB interface layer into the adjacent MgO layer.  Electronic structures of MgO/Fe interfaces have been investigated \cite{Ueda2019STAM}.  It is believed that Fe 3d -O 2p hybridization and distortion of the Fe film play important roles in magnetic anisotropy at the MgO/Fe interface.
+
+
+\added{Thermal annealing also affects interfaces between MgO barriers and ferromagnetic layers.  The details are discussed in the section of Infrared Irradiation and Thermal Annealing.}
+
+
+\subsection{MTJs under $\gamma$-irradiation}
+
+
+Until this point in time, there have been two distinct viewpoints regarding the impact of $\gamma$-ray radiation on MgO-based MTJs.  Some scientists believe that MgO-based MTJs are susceptible to $\gamma$-ray radiation and are likely to sustain damage as a result. Other scientists argue that MgO-based MTJs are resilient to $\gamma$-ray radiation. In the following subsections, each of these viewpoints will be reviewed in detail.
+
+
+\subsubsection{Sensitive Results}
+
+
+Considering the reported irradiation properties of MgO barrier materials and the discussion on ferromagnetic layer materials of MgO-based MTJs above, it can be inferred that MgO-based MTJs would be affected by $\gamma$-ray irradiation.  However, there are limited reports on the degradation of MgO-based MTJs under $\gamma$-ray irradiation.  Two  sensitive cases are reviewed below. 
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=0.85\linewidth]{FigWang2019IEEE}
+	    \put(13,40){\includegraphics[width=0.35\linewidth]{FigWang2019IEEE-Structure}}
+        \end{overpic} 
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{M-H hysteresis loops of MgO-based MTJs measured in an in-plane magnetic field before and after irradiation with a TID of 20 Mrad (SI).  Reproduced with permission \cite{Wang2019IEEE}.  Copyright 2019, IEEE.}}
+  \label{Fig:Wang2019IEEE}
+\end{figure}
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=0.9\linewidth]{FigWang2019IEEE-Optic} 
+        \end{overpic} 
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{Optical surface images of MgO-based MTJs (a) before irradiation, (b) after 20 Mrad (Si) irradiation, and (c) after 247 Mrad (Si) irradiation.  Reproduced with permission \cite{Wang2019IEEE}.  Copyright 2019, IEEE.}}
+  \label{Fig:Wang2019IEEE-Optic}
+\end{figure}
+
+
+Wang \textit{et al.} measured magnetic properties of double-interface CoFeB / MgO perpendicular-anisotropy magnetic tunnel junctions (p-MTJ) \cite{Wang2019IEEE}.  The MTJ films were deposited on thermally oxidized Si substrates with CuN / Ta seed layers, consisting of [Co(0.5) / Pt(0.2)]$_{\times 6}$ / Co(0.6) / Ru(0.8) / Co(0.6) / [Co(0.5) / Pt(0.2)]$_{\times 3}$ / W(0.25) / CoFeB(1.0) / MgO(0.8) / CoFeB(1.3) / W(0.2) / CoFeB(0.5) / MgO(0.75) / Ta(3.0) / Ru(8.0) (numbers in parenthesis are thickness in nanometers).  The CoFeB / MgO $p$-MTJs were exposed to a Cobalt-60 $\gamma$-ray irradiation at room temperature with a dose rate of \unit{220}{rad / s}.  The results showed that the coercivity of the $\gamma$-ray irradiated $p$-MTJs increased gradually with increasing dose of up to \unit{20}{Mrad}, as shown in Figure~\ref{Fig:Wang2019IEEE}. However, there was no observed variation in the saturation magnetization.
+
+
+It was reported that the magnetism of MgO-based MTJs was destroyed by $\gamma$-ray irradiation when the dose was sufficiently high to \unit{247}{Mrad} \cite{Wang2019IEEE}.  It was hypothesized that the destruction of magnetism was caused by radiation-induced thermal stress.  Figure~\ref{Fig:Wang2019IEEE-Optic} shows the surfaces of the MTJs after $\gamma$-ray irradiation, which was caused by differences in  thermal expansion coefficients between the MTJ films and the substrate.
+
+
+\subsubsection{Tolerant Results}
+
+
+Numerous research groups have reported high tolerance of MgO-based MTJs to $\gamma$-ray radiation, with no observed impacts on magnetic or electrical properties of MgO-based MTJs.   
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=0.66\linewidth]{FigNguyen2010ANS_TMR} 
+    		\put(14,40){\includegraphics[width=0.20\linewidth]{FigNguyen2010ANS_TEM}}
+ 	    \end{overpic} 
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{TMR of a single MgO-based MTJ before and after irradiation.   Inset: Cross-sectional TEM image.  Reproduced with permission \cite{Nguyen2010Conference}.  Copyright 2010,  International Training Institute for Materials Science.   Reproduced with permission \cite{Persson2011MST}.  Copyright 2011,  IOP Publishing Ltd.}}
+  \label{Fig:Nguyen2010Conference}
+\end{figure}
+
+
+Nguyen \textit{et al.} exposed a bare MTJ to $\gamma$-ray irradiation (\unit{1.25}{M \electronvolt}) for a total ionizing dose of \unit{100}{kRad} \cite{Nguyen2010Conference}.  The MTJ consisted of Ru(7) / Ta(10) / Co$_{60}$Fe$_{20}$B$_{20}$(3) / Mg(0.3) / MgO(1.1) / Co$_{60}$Fe$_{20}$B$_{20}$(3) / Ru(0.8) / Co$_{70}$Fe$_{30}$(2.5) / PtMn (20) / Ta(5) / CuN(30) / Ta(5) (numbers in parenthesis are thickness in nanometers).  \textit{Ex-situ} measurements revealed that the dose of $\gamma$-ray irradiation did not cause any noticeable changes in magnetic properties of the MTJ, as shown in Figure~\ref{Fig:Nguyen2010Conference}.  The MTJ exhibited no noticeable changes in either coercivity or magnetostatic coupling.    
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=4.5in]{FigRen2012IEEE_R} 
+    		\put(15,65){(a)}
+    		\put(35,30){\includegraphics[width=1in]{FigRen2012IEEE_Structure}}
+ 	    \end{overpic} 
+ 	    \begin{overpic}[width=4.5in]{FigRen2012IEEE_TMR} 
+ 	        \put(15,65){(b)}
+ 	    \end{overpic} 
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{(a) Hysteresis loop of a single MgO-based MTJ and (b) H$_c$ and TMR of a series of MgO-based MTJs before and after exposure to the $\gamma$-radiation with \unit{\sim 10}{rad / s} in dose rate and \unit{1.25}{MeV}.  Inset: Illustration of the MTJ stack.  Reproduced with permission \cite{Ren2012IEEE}.  Copyright 2012, IEEE.}}
+  \label{Fig:Ren2012IEEE}
+\end{figure}
+
+
+Ren \textit{et al.} investigated MgO-based MTJs exposed to $\gamma$-ray irradiation \cite{Ren2012IEEE}.  The MTJs had a full structure of Si / Ru(6) / IrMn(11) / CoFeB(6) / MgO(1.4) / CoFeB(5) (numbers in parenthesis are thickness in nanometers), as shown in the inset of Figure~\ref{Fig:Ren2012IEEE}a.  The tunnel barrier was made of MgO with (001) crystalline orientation.  The junction was exposed to $^{60}$Co irradiation at a dose rate of \unit{9.78}{rad/min}. Figure~\ref{Fig:Ren2012IEEE}a shows the hysteresis loop of a single MTJ before and after exposure to the $\gamma$-radiation.  A \unit{10}{MRad} irradiation had a very weak effect on electrical resistances.  Figure~\ref{Fig:Ren2012IEEE}b shows coercive field H$_c$ and TMR of other individual MTJs with the same structure that were tested under the same irradiation.  The measured coercive field H$_c$ and TMR were almost the same before and after $\gamma$-ray irradiation.  Neither the electrical nor the magnetic properties of the MTJs were affected by the radiation. Therefore, the study concluded that MgO-based MTJs were highly tolerant of $\gamma$-radiation with a dose of \unit{10}{MRad} at \unit{1.25}{MeV}.  
+
+
+%Alves \textit{et al.} examined magnetotransports and sensor parameters (coercivity, curve offset, MR signal, saturated states, and sensitivity) of MgO-based MTJs \cite{Alves2017Thesis}.  The MTJ stacked as Ta(5 nm) / [Ru(15 nm) / Ta(5 nm] $\times 3$ / NiFe (3 nm) / CoFeB (3 nm) / MgO (3 nm) / CoFeB (3 nm) / Ru (0.6 nm) / NiFe (3 nm) / MnIr (18 nm) / Ru (15 nm) / Ta (5 nm).   The MTJs were exposed under Colbalt-60 source to radiations with gamma-ray energies of \unit{1.1}{MeV} and \unit{1.3}{MeV}.  The irradiation was performed up to a total ionizing dose of 5 MRad (50 kGy).  No significant variation was practically observed. 
+
+
+Hughes \textit{et al.} exposed MgO-based MTJs to Co$^{60}$ $\gamma$-ray irradiation with a dose of up to \unit{1}{Mrad} (Si) \cite{Hughes2012IEEE}.  It was reported that $\gamma$-ray irradiation did not affect state retention and switching characteristics of MgO-based MTJs.
+
+
+Most experimental measurements discussed above were carried out after $\gamma$-ray irradiation exposures, and it remained unclear whether the after-exposure status was equivalent to the exposure status.  Nonetheless, it can be inferred that MgO-based MTJs are capable of retaining their non-irradiated initial status after $\gamma$-ray irradiation. 
+
+
+In addition to experimental studies, some theoretical research has been reported in support of the radiation tolerance of MgO-based MTJs.  For instane, Kang \textit{et al.} theoretically evaluated commercial CMOS non-volatile units and MgO-based $p$-MTJs \cite{Kang2014JPd}.  Their simulation results showed that CoFeB / MgO / CoFeB MTJs should be resistant to radiation effects.  
+
+
+\subsection{Discussion on $\gamma$-irradiation of MTJs}
+
+
+As mentioned above, certain research groups have claimed that MgO-based MTJs are \textit{in-situ} sensitive to $\gamma$-ray irradiation due to the sensitivity of MgO-barriers to $\gamma$-ray irradiation.  On the other hand, most laboratories have reported that MgO-based MTJs are tolerant to $\gamma$-ray irradiation.  In order to explain the discrepancy in the response of MgO-based MTJs to $\gamma$-ray irradiation, the effects of $\gamma$-ray are  discussed below from $\gamma$-ray penetrations, dynamic behaviors of MTJ materials, and tunneling tolerance.  The discrepancy may come from different experimental conditions. 
+
+%induced defects, unique MTJ mechanisms, and measurement conditions are discussed below.  Depending on the $\gamma$-ray irradiation conditions, MTJ devices should be sensitive to irradiation except the irradiation was screened or defects automatically disappear. 
+
+
+\subsubsection{$\gamma$-penetrations in MTJs}
+
+   
+MTJs consist of MgO barrier layers sandwiched between ferromagnetic free- / fixed-layers, and metal electrodes, as well as electrodes made from high atomic number (high Z) materials with high-density like Ta and Au.  Electromagnetic waves, including $\gamma$-rays, can pass through these metal and ferromagnetic layers to reach MgO barriers.  In order to analyze these penetrations under different irradiation conditions, electromagnetic penetrations are calculated. The intensity of electromagnetic radiation inside MTJs decreases exponentially from MTJ's surfaces, as described by the equation based on the Beer-Lambert law \cite{Gerward1996RPC,Baur2019RSI}:
+
+
+\begin{equation}
+    I = I_0 e^{- \mu z}
+   \label{Equ:attenuation}
+\end{equation}
+
+
+\noindent where $I$ is the intensity of electromagnetic irradiation transmitted over a distance $z$, $I_0$ is the incident electromagnetic wave intensity, $\mu$ is the linear attenuation coefficient in $cm^{-1}$, $\mu = n \sigma = n (\sigma_{photoelectric} + \sigma_{Compton} + \sigma_{Pair})$ ($n$: the number of atoms/cm$^3$; $\sigma$: proportionality constant that reflects the probability of an electromagnetic wave photon being scattered or absorbed), and $z$ is the distance traveled by the radiation in cm.  \added{For multi-layered films, the electromagnetic intensity is proportional to both the attenuation coefficient and the thickness of each layer through which it passes \cite{Daneshvar2021SR}.}
+
+
+\begin{comment}
+\begin{figure}
+  \begin{center}
+    		\includegraphics[width = 2 in]{FigIkeda2010NM_Structure} \hspace{12pt}
+ 	        \includegraphics[width = 2 in]{FigWang2016NL_HRTEM}
+%    	\begin{overpic}[width=0.9\linewidth]{GammaPenetration-whole} 
+	    %whole device
+	    \begin{tikzpicture}
+ 	        \node[anchor = south west, inner sep = 0] at (0, 0) {\includegraphics[width=0.66\linewidth]{GammaPenetration-whole}};
+	        %\draw[help lines, xstep = 1, ystep = 1] (0, 0) grid (8,4.5);
+	        %each layer
+	         \node at (2.1, 3) {$\leftarrow$Au$\rightarrow$};
+    		\node at (3.45, 3) {$\leftarrow$ \hspace{1pt} Cr \hspace{1pt} $\rightarrow$};
+    		\node at (4.6, 3) {SiO$_2$};
+    		\node at (5.9, 3) {$\leftarrow$ \hspace{8pt} Si \hspace{8pt} $\rightarrow$};
+		%Au layer
+	        \draw[draw =none, fill = red, opacity = 0.2] (1.57, 1.3) rectangle (2.7, 4.43);
+	        %Cr layer
+	        \draw[draw =none, fill = blue, opacity = 0.2] (2.7, 1.3) rectangle (4.23, 4.43);
+	        %zoom region
+%	        \draw[blue, thick] (4.2, 1.3) rectangle (4.25, 4.43);
+	        %SiO2 layer
+	        \draw[draw =none, fill = green, opacity = 0.2] (4.3, 1.3) rectangle (4.95, 4.43);
+	        %Si layer
+	        \draw[draw =none, fill = orange, opacity = 0.2] (4.95, 1.3) rectangle (6.95, 4.43);
+	        %energy of each curve
+    		\draw[] (7.05, 1.55) -- (7.35, 1.45) node[right] {\unit{4.950}{\kilo\electronvolt}};
+    		\draw[] (7.05, 1.7) -- (7.35, 1.8) node[right] {\unit{10.30}{\kilo\electronvolt}};
+    		\draw[] (7.05, 3.8) -- (7.35, 3.5) node[right] {\unit{51.20}{\kilo\electronvolt}};
+    		\draw[] (7.05, 3.95) -- (7.35, 3.8) node[right] {\unit{106.6}{\kilo\electronvolt}};
+	        %\draw[] (7.05, 4.15) -- (7.35, 4.15) %node[right] {\unit{405.0}{\kilo\electronvolt}};
+	        \draw[] (7.05, 4.2) -- (7.35, 4.5) node[right] {\unit{1.000}{\mega\electronvolt}};
+            \end{tikzpicture}
+            %Zoomed interface
+	    \begin{tikzpicture}
+ 	        \node[anchor = south west, inner sep = 0] at (0, 0) {\includegraphics[width=0.66\linewidth]{GammaPenetration-Details}};
+	        %\draw[help lines, xstep = 1, ystep = 1] (0, 0) grid (8,4.5);
+		% each layer
+		\draw[draw =none, fill = blue, opacity = 0.3,  text opacity = 1] (1.55, 1.3) rectangle (2.15, 4.45) node[midway] {\rotatebox{90}{Cr}};
+    		\draw[draw =none, fill = pink, opacity = 0.3,  text opacity = 1] (2.15, 1.3) rectangle (2.75, 4.45) node[midway] {\rotatebox{90}{Ru}};
+    		\draw[draw =none, fill = yellow, opacity = 0.3,  text opacity = 1] (2.75, 1.3) rectangle (3.3, 4.45) node[midway] {\rotatebox{90}{Ta}};
+    		\draw[draw =none, fill = cyan, opacity = 0.3,  text opacity = 1] (3.4, 1.3) rectangle (3.6, 4.45) node[midway] {\rotatebox{90}{CoFeB}};
+  	        \draw[draw =none, fill = red, opacity = 0.3,  text opacity = 1] (3.6, 1.3) rectangle (4.0, 4.45) node[midway] {\rotatebox{90}{MgO}};
+    		\draw[draw =none, fill = cyan, opacity = 0.3,  text opacity = 1] (4.0, 1.3) rectangle (4.5, 4.45) node[midway] {\rotatebox{90}{CoFeB}};
+    		\draw[draw =none, fill = yellow, opacity = 0.3,  text opacity = 1] (4.5, 1.3) rectangle (5.3, 4.45) node[midway] {\rotatebox{90}{Ta}};
+    		\draw[draw =none, fill = pink, opacity = 0.3,  text opacity = 1] (5.3, 1.3) rectangle (6.2, 4.45) node[midway] {\rotatebox{90}{Ru}};
+  	        \draw[draw =none, fill = yellow, opacity = 0.3,  text opacity = 1] (6.2, 1.3) rectangle (6.9, 4.45) node[midway] {\rotatebox{90}{Ta}};
+    		\draw[draw =none, fill = green, opacity = 0.3,  text opacity = 1] (6.9, 1.3) rectangle (7.4, 4.45) node[midway] {\rotatebox{90}{SiO$_2$}};
+	        %energy of each curve
+    		\draw[] (7.05, 1.55) -- (7.35, 1.45) node[right] {\unit{4.950}{\kilo\electronvolt}};
+    		\draw[] (7.05, 1.7) -- (7.35, 1.8) node[right] {\unit{10.30}{\kilo\electronvolt}};
+    		\draw[] (7.05, 3.8) -- (7.35, 3.5) node[right] {\unit{51.20}{\kilo\electronvolt}};
+    		\draw[] (7.05, 3.95) -- (7.35, 3.8) node[right] {\unit{106.6}{\kilo\electronvolt}};
+	        %\draw[] (7.05, 4.15) -- (7.35, 4.15) node[right] {\unit{405.0}{\kilo\electronvolt}};
+	        \draw[] (7.05, 4.2) -- (7.35, 4.5) node[right] {\unit{1.000}{\mega\electronvolt}};
+            \end{tikzpicture}
+  \end{center}
+  \vspace{-12pt}
+\end{comment}  
+ 
+ \begin{figure}
+    \begin{center}
+    \begin{overpic}[width = 5 in]{Fig17_EMTransmission}
+        \put(0, 95){(a)}
+        \put(34.5, 95.8){(b)}
+        \put(0, 67){(c)}
+        \put(0, 32){(d)}
+    \end{overpic}     
+\end{center}
+\hspace{-12pt}
+  \caption{\textit{Transmission of electromagnetic radiation through an MTJ device.  (a) Structure \cite{Ikeda2010NM} and (b) HRTEM cross-sectional image \cite{Wang2016NL} of a MTJ device used for penetration calculations of various irradiation.  Calculated irradiation intensity through electrodes (c) and sublayers (d), including MgO barriers, under various irradiation energy.  The linear attenuation coefficients of the materials were obtained from https://www.physics.nist.gov.  
+ Reproduced with permission \cite{Ikeda2010NM} with copyright 2010, Springer Nature.  Reproduced with permission \cite{Wang2016NL} with copyright 2016, American Chemical Society. }}
+  \label{Fig:GammaRayPenetratation}
+\end{figure}
+
+
+The calculation of electromagnetic radiation transmission through an MTJ is based on a typical MTJ structure consisting of Ta(5) / Ru(10) / Ta(5) / Co$_{20}$Fe$_{60}$B$_{20}$(5) / MgO(2) / Co$_{20}$ Fe$_{60}$B$_{20}$(3) / Ta(5) / Ru(5) / Cr(10000) / Au(10000) (with numbers indicating nominal thicknesses in nanometers), as described in published literature \cite{Ikeda2010NM,Wang2016NL}.  The linear attenuation coefficients of each film material are obtained from published data and used in the calculation.  Equation~\ref{Equ:attenuation} is then applied to calculate the transmission of electromagnetic radiation through the MTJ device.  Figure~\ref{Fig:GammaRayPenetratation} shows the calculated electromagnetic irradiation intensity in the typical MTJ structure.  The used electromagnetic radiation spans from \unit{4.950}{keV} to \unit{1}{MeV} in energy, covering both $\gamma$-ray (with energy great than \unit{124}{keV}) and X-ray (with energy of \unit{125}{eV} - \unit{125}{keV}) irradiation.  According to the theoretical calculation, $\gamma$-ray could penetrate the entire MTJ structure without undergoing significant absorption.  
+
+
+\begin{figure}
+  \begin{center}
+    	\begin{overpic}[width=0.85\linewidth]{FigBeach1953PR} 
+%    		\put(60,25){\footnotesize{0.66 MeV}}
+%    		\put(80,45){\footnotesize{1.17 MeV and 1.33 MeV}}
+%    		\put(70,85){\footnotesize{1.38 MeV and 2.76 MeV}}
+  	    \end{overpic} 
+  \end{center}
+  \vspace{-12pt}
+  \caption{\textit{Transmission of $\gamma$-radiation through iron. $\blacktriangle$: $^{137}$Cs radiation of \unit{0.66}{MeV}; $\bullet$: $^{60}$Co radiation of \unit{1.17}{MeV} and \unit{1.33}{MeV}; $\blacksquare$: $^{24}$Na radiation of \unit{1.38}{MeV} and \unit{2.76}{MeV}.  Reproduced with permission \cite{Beach1953PR}.  Copyright 1953, American Physical Society.}}
+  \label{Fig:Beach1953PR}
+\end{figure}
+
+
+Some MTJs may contain thick metal electrodes, which can affect the penetration of $\gamma$-rays through devices. Figure~\ref{Fig:Beach1953PR} shows the transmission of $\gamma$-rays through iron, a ferromagnetic material used in some MgO-based MTJs \cite{Yuasa2004NM,Zhang2010PRB,Mlynczak2013JAP}.  $\gamma$-rays can penetrate through iron for several centimeters, consistent with other reports \cite{Tsypin1956SJAE}.  Thus, $\gamma$-rays with various energy levels can easily penetrate entire MTJs, which consist of metal nano-films and thick electrodes, after passing through top electrodes.  This suggests that MTJs can be penetrated by $\gamma$-ray, and their metal layers cannot shield all $\gamma$-rays, especially those with high-energy.  
+
+
+\subsubsection{Possible Explanations of Radiation Degradation}
+
+
+Based on the discussion of irradiation penetration mentioned above, it can be concluded that when exposed to $\gamma$-rays, MgO barriers should undergo interreaction with $\gamma$-ray, vis photoelectric effects, Compton scattering, and electron-positron pair production, discussed in previous sections.  These interactions would cause displacement of Mg atoms or O atoms within lattices, resulting in defects or amorphizations of MgO barriers.  As a consequence, MTJs would experience $\gamma$-ray induced degradation according to the Julli\'{e}re model.
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+  \begin{overpic}[width=0.85\linewidth]{FigYuasa2007JPd_ElectronTunneling}
+  	\put(2, 19){\color{white}\rule{84pt}{16pt}}
+  	\put(2, 20){\large \textbf{non-irradiated}}
+  \end{overpic}
+  \end{center}
+  \caption{\textit{Schematic illustrations of electron tunneling through (a) a crystalline barrier and (b) an irradiated barrier.  $\Delta_1: s-p-d$; $\Delta_2: d$; $\Delta_5: p-d$.  Re-plotted from Ref.~\cite{Yuasa2007JPd}.  Reproduced with permission \cite{Yuasa2007JPd} with copyright 2007, IOP Publishing Ltd.}}
+  \label{Fig:ElectronTunnelingModel}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+Figure~\ref{Fig:ElectronTunnelingModel}a illustrates the Julli\'{e}re coherent tunneling in an MTJ with a crystalline MgO barrier and two ferromagnetic layers.  The tunneling process involves three kinds of Bloch states with different wave function symmetries existing in the free-/fixed layers, which pass through the MgO barrier.  The high MR ratio of the Fe / MgO / Fe sandwich structure primarily depends on the coherent spin-dependent tunneling that occurs in the crystalline MgO(001) tunnel barrier.  
+
+
+Irradiation can have an impact on tunneling.  Figure~\ref{Fig:ElectronTunnelingModel}b demonstrates the tunneling through a amorphous barrier.  When the MgO(001) tunnel barrier becomes amorphous due to irradiation,  crystallographic symmetry of the tunnel barrier is lost, Bloch states with various symmetries can couple with the MgO tunneling states, resulting in finite tunneling probabilities.  In 3d ferromagnetic metals and alloys, Bloch states with $\Delta_1$ symmetry ($s$-$p$-$d$ hybridized states) generally exhibit a large positive spin-polarization $P$ at the Fermi energy $E_F$, while those with $\Delta_2$ symmetry ($d$ states) tend to have a negative spin-polarization $P$ at $E_F$  \cite{Yuasa2002Science,Nagahama2005PRL}.  All Bloch states in the ferromagnetic free-/fixed layers contribute to the tunneling-current, affecting the net spin-polarization of the ferromagnetic layers and degrading the functionalities of MTJ devices. In other words, after $\gamma$ irradiation, the momentum of tunneling electrons is no loner conserved due to local disorder scattering.  This would destroy the coherence or symmetry of conducting electrons and changes the coherent tunneling process to incoherent tunneling through the displacement of atoms, degrading MTJs.  It was experimentally approved that defects of MgO barriers impact polarized tunneling, localized states of spin- and polarized symmetry tunneling across MgO barriers \cite{Rotstein2014spirocyclic}.  Electronic properties of MgO grain boundaries in MTJs are symmetry-dependent \cite{Oh2009NP}.
+
+
+In addition, the energy of $\gamma$-rays can be transferred to electrons, resulting in an increase in the number of high-energy free spin electrons that interact with the lattices and interfaces.  This increase can change the spin-polarization:
+
+
+\begin{equation}
+	P = \frac{N_{\uparrow}(E_F) - N_{\downarrow}(E_F)}{N_{\uparrow}(E_F) + N_{\downarrow}(E_F)}
+\end{equation}
+
+
+\noindent here $N_{\uparrow}(E_F)$ and $N_{\downarrow}(E_F)$ are the density of state at Fermi energy ($E_F$) for spin-up electrons and spin-down electrons, respectively.  $\gamma$-ray can change the density of states at $E_F$, affecting spin- and polarized symmetry tunneling.  Additionally, $\gamma$-rays can penetrate through the free-/fixed-layers, modifying their electrical and magnetic properties through  photoelectric effect and the Compton effects, as well as indirect ionization, which can \replaced{intermittently}{temporarily} or permanently degrade MTJ performances.  
+
+
+According to the Julli\'{e}re model and the penetration analysis, MgO-based MTJs are expected to degrade under $\gamma$-ray irradiation, as reported in some literature.  In one word, MTJs should be sensitive to $\gamma$-ray irradiation. 
+
+
+\subsubsection{Possible Explanations of Tunneling Tolerance}
+
+
+Most research groups have reported that MgO-based MTJs are highly tolerant to $\gamma$-ray irradiation and not degraded by $\gamma$-ray irradiation at all.  There are three possible reasons for this. 
+
+
+One possible explanation of their tolerance to $\gamma$-ray is that the unique TMR mechanism of MTJs enables MgO-based MTJs be tolerant.  The tunneling mechanism is the most popular explanation.  Magnetic properties of MTJs originate from spin than charges, which makes MTJs resistant to radiation.  While $\gamma$-ray irradiation can amorphize MgO barriers and ferromagnetic fixed- / free-layers, the resulting partial amorphous status of MTJ layers has only \emph{slightly} effects on magnetic characteristics of the fixed- / free-layers \cite{Wang2016NL}.  Therefore, the degradation caused by irradiation in MgO-based MTJs is negligible.  
+
+
+Secondly, the degradation of MgO-based MTJs is limited to specific conditions, such as exposure to extremely high doses of radiation, which can result in complete or most partial destruction of crystallographic structures of the MTJ layers and cause MTJs to loss their functionalities.  Fortunately, such critical conditions are rarely in $\gamma$-ray irradiation, although they can occur in neutron-irradiation and high-energy ion-irradiation.  Therefor, the degradation of MTJ under $\gamma$-irradiation is expected to be minimal and maybe not to be detected.
+
+
+Thirdly, many reported measurements have been carried out \textit{ex-situ}.  As discussed below, the damages caused by irradiation may diminish over time, and the physical properties of MTJs may be restored when measurements are taken.  
+
+
+\subsubsection{Possible Explanations for Divergence}
+
+
+It is evident that $\gamma$-ray can modify MgO barriers and ferromagnetic layers, and some research groups have reported degradation of MgO-based MTJs as a result.  Additionally, a fact that most MTJs cannot operate at high temperatures suggests that MTJs are susceptible to infrared electromagnetic waves, which have lower energy than $\gamma$-ray.  The temperature-induced degradation indirectly indicates that MTJs should be susceptible to $\gamma$-rays with higher energy.  However, most research reports have indicated that MgO-based MTJs are tolerant to $\gamma$-rays.  The divergence among these reports may be explained in the dynamic properties of $\gamma$-ray-induced damages, which can account for the divergence among the literature.     
+
+
+\vspace{12pt}
+\noindent \emph{\replaced{Intermittent}{Temporal} Defects}
+\vspace{6pt}
+
+
+Alike high-energy ion irradiation, $\gamma$-rays may only induced \replaced{intermittent}{Temporal} defects that do not persist for long time at room temperature and vanish after exposure to irradiation.  The excited electrons and ionization can quickly return to the initial state due to thermal motion at room temperature.  Figure~\ref{Fig:Lynch1975CJP} shows one case where $\gamma$-ray changed the physical property (photoconductivity) of MgO, which restored to its initial state after $\gamma$-ray irradiation due to thermal motion.  
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+  \begin{overpic}[width=0.5\linewidth]{FigSoliman2009REDS_Fading}
+  	\put(-2, 67){(a)}
+  	\put(80, 65){\footnotesize 1 Gy}
+  	\put(80, 30){\footnotesize 10 Gy}
+  \end{overpic}
+  \qquad
+  \begin{overpic}[width=0.425\linewidth]{FigSoliman2009REDS_FadingRate}
+  	\put(-2, 77){(b)}
+  \end{overpic}
+  \end{center}
+  \caption{\textit{(a) Effect of room temperature restoration of irradiated MgO powders measured for a delay period of 75 days ($t = \unit{75}{d}$) and without delay ($t = \unit{0}{d}$).  (b) Relative thermoluminescence as a function of restoration time for irradiated MgO.  Reproduced with permission \cite{Soliman2009REDS} with copyright 2009, Taylor \&{} Francis Group.}}
+  \label{Fig:Soliman2009REDS_Fading}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+Figure~\ref{Fig:Soliman2009REDS_Fading} shows another case.  The TL intensity of MgO powders irradiated by $\gamma$-rays was measured immediately or 75 days after irradiation \cite{Soliman2009REDS}.  The signals induced by $\gamma$-ray irradiation diminished over time.  Recent calculations have also demonstrated that thermal motion at room temperature can eliminate the impact of $\gamma$-irradiation.  
+
+
+Due to the time-dependent dynamic nature of impacts of $\gamma$-rays, only \textit{in-situ} measurements can detect the transiently degraded performances of MTJs with excited states.  Some studies have reported soft-errors of MgO-based MTJs in \textit{in-situ} measurement under irradiation \cite{Kang2014JPd}, which were consistent with the  assumption of \replaced{intermittently}{temporally} impacts over time. 
+
+
+Until now, most state-of-the-art measurements have been carried out \textit{ex-situ},  without the presence of $\gamma$-rays.  Some measurements were performed immediately after $\gamma$-ray irradiation, such as within \unit{2}{min} after removal of irradiation sources \cite{Sibley1969PSSb}, or long after irradiation, such as after one year of storage at room temperature before measurements \cite{Kiesh1977PM}.  The impact of irradiation may have diminished prior to measurements.  Impact information under $\gamma$-rays may decay over time and become undetectable.  This may be one explanation for why MgO-based MTJs have been reported to be resistant to $\gamma$-irradiation in certain instances. 
+
+
+$\gamma$-ray irradiation may only transiently change physical properties of MgO-based MTJ layers during irradiation procedures and do not cause permanent damages.  The properties of MTJ layers can be restored \emph{reversibly} after exposure to $\gamma$-ray irradiation, and therefore, MTJs can return to their initial states without irradiation.  The \replaced{intermittent}{temporal} degradation of MgO-based MTJs induced by $\gamma$-ray irradiation is not detectable in \textit{ex-situ} measurements.   
+
+ 
+\vspace{12pt}
+\noindent \emph{Irradiation Annealing}
+\vspace{6pt}
+
+
+Irradiation annealing may eliminate irradiation impacts.  High-energy $\gamma$-irradiation can produce permanent defects in MgO barriers and ferromagnetic layers, changing their crystallographic structures and physical properties of layers, thereby degrading performances of $\gamma$-irradiated MTJs.  However, these defects may revert to their initial equilibrium state over time at high temperatures.  High dose rate $\gamma$-ray irradiation can generate such high temperature in MgO-based MTJs.  The irradiation-induced heat can self-anneal MTJs, erasing the effects of $\gamma$-irradiation and preventing degradation of $\gamma$-irradiated MTJs.  
+
+ 
+Regrettably, there were few experimental reports on irradiation annealing.  The temperature of MgO-barriers and free-/fixed-layers is rarely mentioned in literature, and the time interval between $\gamma$-ray irradiation and physical measurements is also unknown. More comprehensive \textit{in-situ} and real-time investigation on the interactions between $\gamma$-rays and materials is required.  
+ 
+
+\vspace{12pt}
+\section{Effects of \replaced{Lower Energy}{Other} Irradiation}
+
+\added{
+Electromagnetic waves with wavelengths longer than gamma-rays are commonly known as lower energy waves, such as X-rays, ultraviolet radiation (UV), visible light, infrared radiation, microwaves, and radio waves. These electromagnetic waves have less energy compared to gamma-rays, and are generally classified as non-ionizing radiation, with the exception of X-rays.
+}
+
+\subsection{X-ray Irradiation}
+
+
+The energy of X-ray ranges from several tens of electron volts to hundreds of kiloelectron volts.  The intensity of X-ray decreases exponentially from surfaces of MTJs, as described by the Beer-Lambert law in Equation \ref{Equ:attenuation}.  X-ray irradiation typically only penetrates a few microns into materials, depending on its energy and material compositions.  MgO-based MTJs are typically sandwiched by electric electrodes made of materials such as gold or tantalum.  These metal electrodes are usually thick enough to prevent X-ray from penetrating through to MgO barriers and ferromagnetic layers of MTJs.   The detailed screening effect can be calculated.  Figure~\ref{Fig:GammaRayPenetratation} shows the calculated penetration intensity of X-ray irradiation with an energy above  \unit{4.950}{keV} (energy of X-ray: \unit{124.8}{eV} - \unit{124.8}{keV}).  Hard X-ray can fully penetrate MgO-based MTJs with weak absorption, therefor affecting the physical and chemical properties of both MgO barriers as well as ferromagnetic layers.  MgO barrier layers should be affected by X-ray irradiation similar to two-dimensional MoS$_2$ monolayers \cite{Zhao2019AS,Sze2022MM}. In this case, the effects of X-ray irradiation on MgO-based MTJs are very similar to those of $\gamma$-ray irradiation. These X-ray effects may be also \replaced{intermittent}{temporary} and only detectable through  real-time measurements.  Soft X-rays with energies of ten kiloelectron volts or less would be strongly screened by metal electrodes, being prevented penetration through to MgO barriers and ferromagnetic layers of MTJs.  Consequently, the effects of soft X-ray irradiation can be disregarded.  Up to now, there are few studies of X-ray irradiation on MgO-based MTJs.  
+
+
+\subsection{UV-Vis Irradiation}
+
+
+The energy of ultraviolet-visible (UV-Vis) electromagnetic waves ranges from \unit [{1}{eV} to several tens electron volts, with a wavelength of \unit{10 - 400}{nm}).  As shown in  Figure~\ref{Fig:GammaRayPenetratation}, UV and visible electromagnetic waves can not penetrate through metal layers to reach ferromagnetic and MgO layers.  Additionally, metallic electrodes reflect UV-Vis irradiation, making MgO-based MTJs highly resistant to such irradiation.  
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+  \begin{overpic}[width=0.66\linewidth]{FigDhar1976MP}
+  \end{overpic}
+  \end{center}
+  \caption{\textit{TL response of four MgO crystals as a function of UV exposure at 295 nm.  Impurity of PA sample: $< 0.026$;  impurity of NA sample: 0.068;  impurity of NB sample: 0.082;  impurity of NC sample: $< 0.047$.  Reproduced with permission \cite{Dhar1976MP} with copyright 1976, Am. Assoic. Phys. Med.}}
+  \label{Fig:Dhar1976MP}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+However, heat produced by UV-Vis irradiation may degrade MgO-based MTJs.  Doped MgO materials have been studied as a potential material for UV dosimetry to detect ultraviolet radiation \cite{Las1982JMS,Dhar1976MP}.  Figure~\ref{Fig:Dhar1976MP} shows thermoluminescent (TL) response of UV-irradiated MgO crystals.  Studies have shown that thermoluminescent peaks of doped MgO crystals depend significantly on the dose of ultraviolet irradiation with wavelengths such as \unit{295}{nm} \cite{Dhar1976MP}, \unit{289}{nm} \cite{Las1982JMS}, and \unit{249}{nm} \cite{Las1982JMS}.  Even pure MgO crystals are  affected by ultraviolet irradiation with wavelengths such as \unit{295}{nm} UV \cite{Dhar1976MP} and \unit{337}{nm} \cite{Duley1985JPCS}).  Similar behaviors were reported at other ultraviolet wavelengths \cite{Las1982JMS}.  These studies demonstrated that UV-irradiation changes microstructures of MgO materials.  However, specific physical processes underlying the UV-Vis radiation and MgO materials were not well described in literature.  The most likely explanation is that UV-Vis radiation caused an increase in temperature in the MgO materials, leading to their degradation.  
+
+
+It is noteworthy that the changes in TL signals induced by UV-Vis irradiation decreased over time.  It was reported that TL intensity of some irradiated crystals restored up to \unit{95}{\%} of initial value after being stored at room temperature for four days  \cite{Las1982JMS}.     
+
+
+In theory, UV-Vis irradiation should degrade MgO-based MTJs because MgO is sensitive to these electromagnetic waves.  However, this degradation should only be \replaced{intermittent}{temporary} and result from irradiation-induced heating.  If heating effects are avoided, MgO-based MTJs should be highly tolerant to UV-Vis irradiation.  To date, there is no literature available on the subject of UV-Vis irradiation on MgO-based MTJs.
+
+
+\subsection{Infrared Irradiation and Thermal Annealing}
+
+
+Heat radiation or thermal radiation is a well-known term for infrared irradiation.  Pulsed thermal radiation with a long-wavelength of \unit{1 - 20}{micron} and energy of \unit{1 - 24}{eV} can be efficiently screened by metallic electrodes.  However, continuous thermal radiation, aslo known as heat, can penetrate MTJ devices during prolonged exposure to high temperatures, resulting in thermal annealing and thermal equilibrium.  Thus, infrared irradiation is different somewhat from other types of irradiation.
+
+
+There are reports on the annealing effect on MTJ component materials. Nikiforov \textit{et al.} studied the pulse cathodoluminescence (PCL) excitation of MgO nanomaterials with a  size of \unit{250 - 500}{nm} \cite{Nikiforov2016RM}.  It was reported that the PCL intensity at \unit{2.0 - 3.5}{eV} band increased by an order with increasing annealing temperatures, attributed to the relaxation of F-type centers (oxygen vacancies with two captured electrons).  Shen \textit{et al.} investigated the impact of thermal annealing on ferromagnetic CoFeB layers \cite{Shen2006APL}.  Their investigation indicated that thermal annealing enhanced the crystallization of CoFeB at the interfaces with MgO, affecting the magnetoresistance of MgO-based MTJs.  Yuasa \textit{et al.} reviewed the annealing effect on CoFeB electrodes \cite{Yuasa2007JPd}, and interested readers are referred to the literature cited therein. 
+
+
+Ikeda \textit{et al.} investigated the effect of thermal annealing on MTJs at high temperatures higher than \unit{500}{\celsius} \cite{Ikeda2008APL}.  The MTJs have a structure of  in Ta(5) / Ru(10) / Ta(5) / Co$_{20}$Fe$_{60}$B$_{20}$(5) / MgO(2.1) / Co$_{20}$Fe$_{60}$B$_{20}$(4) / Ta(5) / Ru(5) (in nm).  It was reported that the annealing process led to the relaxation of residual stress and approvement in the (001) orientation of MgO barriers, resulting in an enhanced TMR ratio.
+ 
+ 
+Wang \textit{et al.} studied both \textit{in-situ} and \textit{ex-situ} measured TMR values at \unit{380}{\celsius} \cite{Wang2008APL1}.  The TMR structure consisted of Si / SiO$_2$ / Ta(7) / Ru(20) / Ta(7) / CoFe(2) / IrMn(15) / CoFe(2) /Ru(1.7) / CoFeB(3) / MgO(1.5 - 3) / CoFeB(3) / Ta(8) / Ru(10), with the numbers indicating the layer thicknesses in nanometers.  It was found that the amorphous CoFeB layers underwent crystallization, and the quality of MgO barriers' crystallinity improved in less than \unit{10}{min} annealing, resulting in a TMR value larger than \unit{200}{\%}.  The crystallization was further experimentally confirmed through their HRTEM work \cite{Wang2016NL}.  
+
+
+Liu \textit{et al.} investigated the thermal stability of MTJs with MgO barriers at temperatures up to \unit{500}{\celsius} \cite{Liu2006APL}.  The MTJs consisted of  Ta(30) / [Co$_{50}$Fe$_{50}$]$_{\times 3}$ / IrMn(15) / [Co$_{50}$Fe$_{50}$]$_{\times 2}$ / Ru(0.8) / [Co$_{40}$Fe$_{40}$B$_{20}$]$_{\times 3}$ / MgO(1.2) / [Co$_{40}$Fe$_{40}$B$_{20}$]$_{\times 3}$ / Ta(10) / Ru(5).  The study observed irreversible loss of magnetoresistance at high temperatures.
+
+
+\begin{figure}
+%\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+     \includegraphics[width=0.65\linewidth]{FigXu2018AM-HRTEM}  
+     \includegraphics[width=0.3\linewidth]{FigXu2018AM-Mapping}
+  \end{center}
+  \caption{\textit{Cross-sectional HRTEM images (a-d) and ADF-STEM images and corresponding elemental EELS mappings (e-h) using O-K, Fe-L$_{3,2}$, Co-L$_{3,2}$ and B-K ionization edges taken from the Ta / CoFeB / MgO / CoFeB / Ta MTJ (a,b,e,f) and W /  CoFeB / MgO / CoFeB MTJ (c,d,g,h) at \unit{300}{\celsius} (a,c,e,g) and \unit{400}{\celsius} (b, d,f,h).  Reproduced with permission \cite{Xu2018AM} with copyright 2018, Elsevier.}}
+  \label{Fig:Xu2018AM}
+%  \vspace{-12pt}
+%\end{wrapfigure}
+\end{figure}
+
+
+Typically, thermal annealing (using infrared radiation) has a positive benefits on the crystallization of MgO barriers, which enhances the performances of MTJs.  However, thermal annealing also accelerates interface diffusion between MgO barriers and ferromagnetic layers, leading to degradation of MTJ performances \cite{Bai2013PRB}. \added{
+Xu \textit{et al.} employed transmission electron microscopy and electron energy loss spectroscopy to investigate the microstructures of MgO-CoFeB interfaces of MTJs \cite{Xu2018AM}. Figure~\ref{Fig:Xu2018AM} shows HRTEM images, STEM images, and EELS mapping of the interfaces after thermal annealing.  Thermal annealing indeed crystallized MTJ layers, as shown by the HRTEM images, and caused boron diffusion.  Boron diffusion led to the growth of CoFe nanocrystals from CoFeB layers under annealing, while the crystallization did not significantly affect the MR properties. Instead, the MR ratio was predominantly determined by grain boundary transport caused by boron distribution.  If boron diffused to metallic underlayers from the inside to the outside (as shown in Figure~\ref{Fig:Xu2018AM}e-f), the MR ratio would be improved.  Conversely, annealing may result in boron diffusing into grain boundaries of MgO barriers from the outside to the inside (shown in Figure~\ref{Fig:Xu2018AM}g-h), leading to a decrease in the MR ratio.  The interfacial properties of MTJs regulated the diffusion of boron and affected the effect of thermal annealing.
+}
+Thus, the effect of thermal irradiation on MTJ devices depends on annealing temperature, duration, and structures of MTJs.  Thermal irradiation can either benefit or degrade MTJs' performances.     
+
+
+It is important to notice that irradiation other than infrared irradiation can also produce heat, particularly at high-dose rates, which can lead to an increase in  temperatures of MTJs and produce similar annealing effects.  Under such circumstances, high-energy irradiation, such as $\gamma$-ray and hard X-ray irradiation, may cause additional annealing effects.  To study the effects of irradiation, it is crucial to investigate MTJs at constant temperatures or monitor the internal temperatures of MTJs, particularly the temperatures of MgO and ferromagnetic layers.   
+
+
+\subsection{Microwave Irradiation}
+
+
+The penetration depth of microwaves on conductive metal surfaces is typically less than one micron \cite{YoshiKawa2010JMPEE}.  Therefore, metallic electrodes of MTJs can highly reflect microwaves.  In other words, microwaves should not penetrate through electrodes to irradiate MgO barriers and ferromagnetic layers.  Therefore, the microwave irradiation effect would be ignored, and microwave irradiation should not have any significant impact on the performance of MTJs.  
+
+
+Although microwave irradiation is not expected to penetrate through electrodes of MTJs to affect MgO barriers and ferromagnetic layers, it can cause a significant increase in temperature of metal layers.  Research has shown that microwave irradiation can produce a high temperature of up to \unit{500}{\celsius} in Au films in less than 10 seconds \cite{Cao2009JMR}.  Therefore, microwave irradiation can generate a high temperature locally in ferromagnetic free-\fixed layers of MTJs, which can have a significant impact on the performance of MTJs.  
+
+
+Up to now, there are limited reports on the impact of microwave irradiation on MgO-based MTJs.  Some groups investigated the behavior of MgO-based MTJs under microwave irradiation \cite{Gui2015APL}.  Unfortunately, it was not stated whether the MgO-based MTJs were damaged under microwave irradiation.
+
+
+\subsection{Radio Frequency \deleted{and Other Longer wavelength} Electromagnetic Irradiation}
+
+
+Radio-frequency (RF) electromagnetic radiation can be shielded by conductive or magnetic materials, which is known as RF shielding.  Since MTJs have metal electrodes, electrodes can block RF radiation and therefore MTJs should not be affected.  The theoretical calculation shown in Figure~\ref{Fig:GammaRayPenetratation} also predicts that electromagnetic waves with energy lower than four kiloelectron volts would not penetrate through electrodes of MTJs.  As listed in Table~\ref{Tab:IrradiationEnergy}, energy of radio-frequency irradiation is typically less than a few milli-electronvolts, so RF irradiation should be totally shielded and not affect MTJ performance.  
+
+
+Similar to microwaves, RF irradiation can also induce heating in metals, leading to high temperatures locally on MTJ electrodes.  However, the induced temperature is expected to be low due to extremely low energy of IR radiation.  
+
+
+Therefore, effects of radio-frequency and other electromagnetic irradiation with longer wavelength can be ignored.  MgO-based MTJs should be highly tolerant to these  irradiation.  
+
+
+\section{Outlook}
+
+%from Seifu
+MgO-based MTJs are promising for various applications, such as MRAM in quantum computers, logic gates, ultra-sensitive sensors, and enegy harvesting and storage.  These devises can be utilized in space technology, and therefore, the impact of radiation is crucial.  With advancements in super-large-scale0integration (SLSI) technology for central processing units (CPUs) and graphics processing units (GPUs) and programming languages like open-source Python programming language as well as professional packages / libraries for programming languages, it is possible to simulate  complex interactions between irradiation and MTJ components at the atomic level. Dynamic simulations at atomic level can be employed to investigate individual atomic motion and nanoscale displacement under irradiation, to calculate MR, providing insights into the dynamic behavior of atoms during irradiation.  Additionally, the development of artificial intelligence (AI),  including machine learning and deep learning, makes it possible to collect most research data on irradiation of MgO-based MTJs and systematically analyze irradiation impacts.  Various parameters, such as irradiation energy, irradiation duration,  dose, and dose rate, can be simulated investigated and compared with experimental data to understand electromagnetic-material interaction.  Safe operation of MgO-based MTJs can be predicted in various irradiation environments.
+
+
+\section{Conclusions}
+
+The effects of irradiation on MgO-based magnetic tunnel junctions have been reviewed and analyzed in various irradiation environments, including high-energy cosmic radiation, $gamma$-ray, X-ray, UV-vis, infrared irradiation, microwave irradiation, radio frequency, and long wavelength electromagnetic irradiation.  The examination considered both  material properties and device performance.  In general, cosmic radiations (including ions and protons) can damage MTJs due to permanent atom displacements in MTJ layers.  While some groups have reported that $\gamma$-ray irradiation degrades the performance of MgO-based MTJs, the majority of scientists have claimed that MgO-based MTJs are tolerant to $\gamma$-ray without significant degradation in their performance.  The impact of hard X-ray irradiation is comparable to that of $\gamma$-ray irradiation.  Soft X-ray, UV-vis, infrared, and microwave irradiation can be screened or shielded by metal electrodes of MTJs, and these types of electromagnetic irradiation should not significantly affect MTJ devices.  Nonetheless, these types of irradiation may induce heat or annealing, especially for infrared and microwave irradiation, which can affect MRJ performances by causing crystallization of MgO barriers and ferromagnetic layers as well as interfacial diffusion.  There is no strong evidence that the present MgO-based MTJ devices are susceptible to irradiation.  The effects of irradiation on MgO-based MTJs are discussed from electromagnetic penetration, Julli\'{e}re model, TMR mechanism, and annealing perspectives, to explore the physics behind these reported experimental data.  Further \textit{in-situ} and real-time investigations are necessary to fully understand the irradiation tolerance of MgO-based MTJ devices under various electromagnetic irradiation. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+%\supplementary{The following are available online at \linksupplementary{s1}, Figure S1: title, Table S1: title, Video S1: title.}
+
+% Only for the journal Methods and Protocols:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following are available at \linksupplementary{s1}, Figure S1: title, Table S1: title, Video S1: title. A supporting video article is available at doi: link.} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authorcontributions{Conceptualization, Q.~P.~and Y.~L.; writing---original draft preparation, D.~S., Q.~P., F.~C., and Y.~L.; writing---review and editing, D.~S., Q.~P., F.~C., and Y.~L.; reference and formatting: J.~H.~and Y.~L.; visualization, K.~S.~and Y.~L.  All authors have read and agreed to the published version of the manuscript.
+}
+%For research articles with several authors, a short paragraph specifying their individual contributions must be provided. The following statements should be used ``Conceptualization, X.X. and Y.Y.; methodology, X.X.; software, X.X.; validation, X.X., Y.Y. and Z.Z.; formal analysis, X.X.; investigation, X.X.; resources, X.X.; data curation, X.X.; writing---original draft preparation, X.X.; writing---review and editing, X.X.; visualization, X.X.; supervision, X.X.; project administration, X.X.; funding acquisition, Y.Y. All authors have read and agreed to the published version of the manuscript.'', please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation. Authorship must be limited to those who have contributed substantially to the work~reported.}
+
+%\funding{Please add: ``This research received no external funding'' or ``This research was funded by NAME OF FUNDER grant number XXX.'' and  and ``The APC was funded by XXX''. Check carefully that the details given are accurate and use the standard spelling of funding agency names at \url{https://search.crossref.org/funding}, any errors may affect your future funding.}
+
+%\institutionalreview{In this section, please add the Institutional Review Board Statement and approval number for studies involving humans or animals. Please note that the Editorial Office might ask you for further information. Please add ``The study was conducted according to the guidelines of the Declaration of Helsinki, and approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).'' OR ``Ethical review and approval were waived for this study, due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans or animals. You might also choose to exclude this statement if the study did not involve humans or animals.}
+
+%\informedconsent{Any research article describing a study involving humans should contain this statement. Please add ``Informed consent was obtained from all subjects involved in the study.'' OR ``Patient consent was waived due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans. You might also choose to exclude this statement if the study did not involve humans.
+
+%Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
+
+%\dataavailability{In this section, please provide details regarding where data supporting reported results can be found, including links to publicly archived datasets analyzed or generated during the study. Please refer to suggested Data Availability Statements in section ``MDPI Research Data Policies'' at \url{https://www.mdpi.com/ethics}. You might choose to exclude this statement if the study did not report any data.} 
+
+\acknowledgments{
+Y.~L.~is partially supported by DOE DE-FE0031906.  D.~S.~acknowledge the support of U.~S.~Army Research Laboratory grant USARMY-W911NF-19-2-0222.  Q.~P.~would like to acknowledge the support provided by the Deanship of Scientific Research (DSR) at King Fahd University of Petroleum \&{} Minerals (KFUPM) through project DF201020.  The views and conclusions presented in this document are those of the authors and do not be interpreted as representing the official policies, either expressed or implied, of the Army Research Laboratory or the U.~S.~Government.  The U.~S.~Government is authorized to reproduce and distribute reprints for government purposes notwithstanding any copyright notation contained herein.
+
+%In this section you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).
+}
+
+\conflictsofinterest{
+The authors declare no conflict of interest.
+
+%Declare conflicts of interest or state ``The authors declare no conflict of interest.'' Authors must identify and declare any personal circumstances or interest that may be perceived as inappropriately influencing the representation or interpretation of reported research results. Any role of the funders in the design of the study; in the collection, analyses or interpretation of data; in the writing of the manuscript, or in the decision to publish the results must be declared in this section. If there is no role, please state ``The funders had no role in the design of the study; in the collection, analyses, or interpretation of data; in the writing of the manuscript, or in the decision to publish the~results''.
+} 
+
+%% Optional
+%\sampleavailability{Samples of the compounds ... are available from the authors.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Only for journal Encyclopedia
+%\entrylink{The Link to this entry published on the encyclopedia platform.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+\abbreviations{Abbreviations}{
+The following abbreviations are used in this manuscript:\\
+
+\noindent 
+\begin{tabular}{@{}ll}
+ADC & analog-to-digital converter \\
+AMR & anisotropic magnetoresistance \\
+CMOS & complementary metal-oxide-semiconductor \\
+DC & direct-current \\
+DRAM & dynamic random-access memory \\
+GMR & giant magnetoresistance \\
+HDD & hard disk drive \\
+MOS & metal oxide sensor \\
+MR & magnetoresistance \\
+MRAM & magnetic random-access memory \\
+MTJ &  magnetic tunnel junction \\
+PV & photovoltaic \\
+RAM & random-access memory \\
+RF & radio-frequency \\
+RT & room-temperature \\
+SEM & scanning electron microscopy \\
+SRAM & static random-access memory \\
+TE & thermoelectric \\
+TEM & transmission electron microscopy \\
+TMR & tunnel magnetoresistance 
+\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+%\appendixtitles{no} % Leave argument "no" if all appendix headings stay EMPTY (then no dot is printed after "Appendix A"). If the appendix sections contain a heading then change the argument to "yes".
+%\appendixstart
+%\appendix
+%\section[\appendixname~\thesection]{}
+%\subsection[\appendixname~\thesubsection]{}
+%The appendix is an optional section that can contain details and data supplemental to the main text---for example, explanations of experimental details that would disrupt the flow of the main text but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data are shown in the main text can be added here if brief, or as Supplementary Data. Mathematical proofs of results not central to the paper can be added as an appendix.
+
+%\section[\appendixname~\thesection]{}
+%All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{adjustwidth}{-\extralength}{0cm}
+%\printendnotes[custom] % Un-comment to print a list of endnotes
+
+\reftitle{References}
+
+% Please provide either the correct journal abbreviation (e.g. according to the “List of Title Word Abbreviations” http://www.issn.org/services/online-services/access-to-the-ltwa/) or the full name of the journal.
+% Citations and References in Supplementary files are permitted provided that they also appear in the reference list here. 
+
+%=====================================
+% References, variant A: external bibliography
+%=====================================
+%\bibliography{your_external_BibTeX_file}
+
+%=====================================
+% References, variant B: internal bibliography
+%=====================================
+
+\bibliography{LanPublicationDatabaseJan2019,IrradiationTotalRefDatabase,MTJ_EnergySensor} %,DS2020TMR}
+
+%\begin{thebibliography}{999}
+% Reference 1
+%\bibitem[Author1(year)]{ref-journal}
+%Author~1, T. The title of the cited article. {\em Journal Abbreviation} {\bf 2008}, {\em 10}, 142--149.
+%\end{thebibliography}
+
+
+% If authors have biography, please use the format below
+\section*{Short Biography of Authors}
+
+\bio
+
+{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{bio-Seifu.jpeg}}}
+{\textbf{Dereje Seifu} Dr.~Dereje Seifu is a professor of physics at Morgan State University.  He received his Ph.~D.~degree from the University of Cincinnati in 1994, an MS from both the University of Cincinnati and Addis Ababa University, a certificate from ICTP in Trieste, Italy, and a BS from Addis Ababa University.  Dr.~Seifu's current research focuses on magnetostrictive materials, tunneling magneto-resistance devices, and 2-D materials.}
+
+
+\bio
+
+{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{bio-Peng.jpeg}}}
+{\textbf{Qing Peng} Dr.~Qing Peng is an Associate Professor and K.~A.~CARE Fellow in the Department of Physics at King Fahd University of Petroleum and Minerals (KFUPM) in Saudi Arabia. Dr.~Peng obtained his Ph.~D.~in Physics from the University of Connecticut in 2005, an MS from the State University of New York at Binghamton, and a BS from Peking University. Dr.~Peng's current research in computational materials physics covers various areas such as strain engineering, radiation damage, multiscale modeling, shock physics, ion-batteries, thermoelectrics, and perovskite solar cells.}
+
+
+\bio
+
+{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{bio-Hou2.jpeg}}}
+{\textbf{Jie Hou} Mr.~Jie Hou is a Ph.~D.~candidate in the School of Materials Science and Engineering at the Georgia Institute of Technology.  He obtained a Bachelor's degree in Optics from Changchun University of Science and Technology, China.  Mr.~Hou's ongoing research focuses on transmission electron microscopy and fuel cells.}
+
+
+\bio
+
+{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{bio-Sze.jpg}}}
+{\textbf{Kit Sze} Mr.~Kit Sze is a senior student at Morgan State University.  He is majoring in Mathematics with a minor in Physics.  He currently holds the position of research assistant in the Department of Physics at Morgan State University.  He  current research focuses on photovoltaic measurements and data analyses.  Mr.~Sze's research also encompassed  computational neuroscience and AI healthcare.  He is a member of PI MU EPSILON and holds an Honor Mathematics distinction.}
+
+
+\bio
+
+{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{bio-Cao.jpeg}}}
+{\textbf{Fei Cao} Dr.~Fei Gao is a professor at the University of Michigan, holds positions in the Department of Nuclear Engineering and Radiological Sciences as well as the Department of Material Science and Engineering,. Dr.~Gao's research is currently focuses on various topics including ion-solid interaction, irradiation damage, detector materials, nanostructure properties, Li$^+$ ion batteries, and the  advancement of multi-scale material modeling.
+}
+
+
+\bio
+
+{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{bio-Lan.jpeg}}}
+{\textbf{Yucheng Lan} Dr.~Yucheng Lan is a professor of physics at Morgan State University.  He obtained his Ph.~D.~degree from the Institute of Physics at the Chinese Academy of Sciences, master's and bachelor's degrees from Jilin University in China.  Dr.~Lan's current research focuses on renewable energy, nanomaterials, and sensors, with expertise in X-ray powder diffraction, electron microscopies, and optical spectroscopy. }
+
+
+% For the MDPI journals use author-date citation, please follow the formatting guidelines on http://www.mdpi.com/authors/references
+% To cite two works by the same author: \citeauthor{ref-journal-1a} (\citeyear{ref-journal-1a}, \citeyear{ref-journal-1b}). This produces: Whittaker (1967, 1975)
+% To cite two works by the same author with specific pages: \citeauthor{ref-journal-3a} (\citeyear{ref-journal-3a}, p. 328; \citeyear{ref-journal-3b}, p.475). This produces: Wong (1999, p. 328; 2000, p. 475)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for journal Sci
+%\reviewreports{\\
+%Reviewer 1 comments and authors’ response\\
+%Reviewer 2 comments and authors’ response\\
+%Reviewer 3 comments and authors’ response
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{adjustwidth}
+\end{document}
+
